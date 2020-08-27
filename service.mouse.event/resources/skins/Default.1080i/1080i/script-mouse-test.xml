@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	
+	<onload>SetProperty(current.color,white)</onload>
+	<onload>SetProperty(progress102.color,white)</onload>
+	<onload>SetProperty(progress112.color,white)</onload>
+	<onload>SetProperty(progress122.color,white)</onload>
+	<onload>SetProperty(progress132.color,white)</onload>
+	<onload>SetProperty(progress142.color,white)</onload>
+	<controls>
+		<control type="image">
+			<description>bg image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>../../media/mouse-black-back.png</texture>
+		</control>
+		<control type="group">
+			<depth>0.08</depth>
+			<control type="image">
+				<description>Section header bg image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>63</height>
+				<texture>../../media/mouse-black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>30</left>
+				<top>4.5</top>
+				<width>52.5</width>
+				<height>52.5</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_games.png</texture>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>30</left>
+				<top>4.5</top>
+				<width>52.5</width>
+				<height>52.5</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_events.png</texture>
+				<visible>Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="grouplist">
+				<left>97.5</left>
+				<top>7.5</top>
+				<width>1500</width>
+				<height>45</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width max="1200" min="0">auto</width>
+					<height>45</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[system.addontitle(service.mouse.event)][COLOR=blue] - [/COLOR](x:$INFO[Window(home).Property(MousePosX)], y:$INFO[Window(home).Property(MousePosY)])</label>
+					<visible>Window.IsActive(Pointer.xml)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width max="1200" min="0">auto</width>
+					<height>45</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Joystick[COLOR=blue] - [/COLOR](x:$INFO[Window(13000).Property(JoyPosX)], y:$INFO[Window(13000).Property(JoyPosY)])</label>
+					<visible>!Window.IsActive(Pointer.xml)</visible>
+				</control>
+			</control>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<left>126r</left>
+			<top>0</top>
+			<width>96</width>
+			<height>48</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>../../media/mouse-DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>../../media/mouse-DialogCloseButton.png</texturenofocus>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
+
+		<control id="10" type="group">
+			<depth>0.08</depth>
+			<left>30</left>
+			<top>82.5r</top>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<control id="21" type="button">
+				<description>undo push button</description>
+				<left>0</left>
+				<top>0</top>
+				<width>67.5</width>
+				<height>67.5</height>
+				<label>undo</label>
+				<font>-</font>
+				<texturefocus border="5">../../media/mouse-floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">../../media/mouse-floor_button.png</texturenofocus>
+				<onleft>20</onleft>
+				<onright>20</onright>
+				<onup>9002</onup>
+				<ondown>9003</ondown>
+			</control>
+			<control type="image">
+				<description>undo back Icon</description>
+				<left>7.5</left>
+				<top>7.5</top>
+				<width>52.5</width>
+				<height>52.5</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_back.png</texture>
+			</control>
+		</control>
+
+		<control type="group">
+			<left>-375</left>
+			<depth>0.15</depth>
+			<animation condition="[ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)] + ![Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRadioRDSInfo)]" easing="out" effect="slide" end="250,0" start="0,0" time="300" tween="quadratic">Conditional</animation>
+			<animation condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001)" easing="out" effect="slide" end="-300,0" start="0,0" time="300" tween="quadratic">WindowClose</animation>
+			<animation condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9001)]" easing="out" effect="slide" end="-50,0" start="0,0" time="225" tween="quadratic">WindowClose</animation>
+			<animation easing="out" effect="slide" end="0,0" start="-50,0" time="225" tween="quadratic">WindowOpen</animation>
+			<control id="8999" type="button">
+				<description>Fake button for mouse control</description>
+				<left>0</left>
+				<top>0</top>
+				<width>375</width>
+				<height>1080</height>
+				<label>-</label>
+				<font>-</font>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+				<visible>true</visible>
+			</control>
+			<control id="9001" type="button">
+				<left>375</left>
+				<top>390</top>
+				<width>63</width>
+				<height>192</height>
+				<font>-</font>
+				<texturefocus>../../media/mouse-HasSub.png</texturefocus>
+				<texturenofocus>../../media/mouse-HasSub.png</texturenofocus>
+			</control>
+			<control type="image">
+				<left>-30</left>
+				<top>0</top>
+				<width>420</width>
+				<height>1080</height>
+				<texture border="0,0,10,0">../../media/mouse-MediaBladeSub.png</texture>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<left>0</left>
+				<top>0</top>
+				<width>375</width>
+				<height>120</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-kodi-logo.png</texture>
+			</control>
+			<control id="9000" type="grouplist">
+				<left>0</left>
+				<top>120</top>
+				<width>375</width>
+				<height>900</height>
+				<onleft>9000</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<control id="200" type="group">
+					<height>172.5</height>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>52.5</height>
+						<font>font12</font>
+						<label>Current Color</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="image">
+						<description>current color image</description>
+						<left>7.5</left>
+						<top>52.5</top>
+						<width>360</width>
+						<height>60</height>
+						<texture colordiffuse="$INFO[Window(13000).Property(current.color)]">../../media/picker-white.png</texture>
+						<bordertexture border="12">../../media/mouse-button-nofocus.png</bordertexture>
+						<bordersize>6</bordersize>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>52.5</top>
+						<width>375</width>
+						<height>60</height>
+						<font>font12</font>
+						<label>$INFO[Window(13000).Property(current.color)]</label>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>112.5</top>
+						<width>375</width>
+						<height>52.5</height>
+						<font>font12</font>
+						<label>176</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+				<control id="9002" type="panel">
+					<description>styles menu</description>
+					<width>375</width>
+					<height>187.5</height>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>300</scrolltime>
+					<itemlayout height="62.5" width="62.5">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>93.75</width>
+							<height>93.75</height>
+							<texture border="3">button-nofocus.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>93.75</width>
+							<height>93.75</height>
+							<font>font10</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="62.5" width="62.5">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>93.75</width>
+							<height>93.75</height>
+							<texture border="5">../../media/mouse-folder-focus.png</texture>
+							<animation condition="!Control.HasFocus(9002)" effect="fade" end="30" start="100" time="100">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>93.75</width>
+							<height>93.75</height>
+							<font>font10</font>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<selectedcolor>selected</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+				</control>
+
+				<control id="201" type="group">
+					<visible>String.IsEqual(Window(13000).Property(current.style),star) | String.IsEqual(Window(13000).Property(current.style),polygon) | String.IsEqual(Window(13000).Property(current.style),circle) | Control.IsVisible(150) | Control.IsVisible(151) | Control.IsVisible(152)</visible>
+					<height>60</height>
+					<control type="label">
+						<width>375</width>
+						<height>52.5</height>
+						<font>font12</font>
+						<label>Options</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<visible>![Control.HasFocus(101) + Integer.IsGreater(Control.GetLabel(101).index(1),99)]</visible>
+					</control>
+					<control type="label">
+						<width>375</width>
+						<height>52.5</height>
+						<font>font12</font>
+						<label>Warning: Please don't Abuse!</label>
+						<textcolor>red</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<visible>Control.HasFocus(101) + Integer.IsGreater(Control.GetLabel(101).index(1),99)</visible>
+					</control>
+				</control>
+
+				<control id="100" type="group">
+					<description>Polygon vertex - Star peak</description>
+					<visible>String.IsEqual(Window(13000).Property(current.style),star) | String.IsEqual(Window(13000).Property(current.style),polygon)</visible>
+					<height>60</height>
+					<control id="102" type="progress">
+						<left>4.5</left>
+						<top>4.5</top>
+						<width>366</width>
+						<height>51</height>
+						<texturebg colordiffuse="00FFFFFF">../../media/mouse-osd_slider_nibNF.png</texturebg>
+						<midtexture colordiffuse="$INFO[Window(13000).Property(progress102.color)]">../../media/mouse-osd_slider_nib.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<animation center="auto" condition="String.IsEqual(Window(13000).Property(progress102.color),red)" effect="rotate" end="180" time="0">conditional</animation>
+					</control>
+					<control id="101" type="edit">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>60</height>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>230</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<shadowcolor>black</shadowcolor>
+						<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Peak count:</label>
+						<hinttext>[COLOR=grey3][LIGHT]2 &lt;~&gt; [COLOR=red]&#8734;[/COLOR][/LIGHT][/COLOR]</hinttext>
+						<onup>9002</onup>
+						<ondown>110</ondown>
+					</control>
+				</control>
+
+				<control id="110" type="group">
+					<description>Radius 1 - Circle, Polygon, Star</description>
+					<visible>String.IsEqual(Window(13000).Property(current.style),star) | String.IsEqual(Window(13000).Property(current.style),polygon) | String.IsEqual(Window(13000).Property(current.style),circle)</visible>
+					<height>60</height>
+					<control id="112" type="progress">
+						<left>4.5</left>
+						<top>4.5</top>
+						<width>366</width>
+						<height>51</height>
+						<texturebg colordiffuse="00FFFFFF">../../media/mouse-osd_slider_nibNF.png</texturebg>
+						<midtexture colordiffuse="$INFO[Window(13000).Property(progress112.color)]">../../media/mouse-osd_slider_nib.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<animation center="auto" condition="String.IsEqual(Window(13000).Property(progress112.color),red)" effect="rotate" end="180" time="0">conditional</animation>
+					</control>
+					<control id="111" type="edit">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>60</height>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>230</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<shadowcolor>black</shadowcolor>
+						<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Radius:</label>
+						<hinttext>[COLOR=grey3][LIGHT]1 &lt;~&gt; 360[/LIGHT][/COLOR]</hinttext>
+						<onup>100</onup>
+						<ondown>120</ondown>
+					</control>
+				</control>
+
+				<control id="120" type="group">
+					<description>Radius 2 - Star</description>
+					<visible>String.IsEqual(Window(13000).Property(current.style),star)</visible>
+					<height>60</height>
+					<control id="122" type="progress">
+						<left>4.5</left>
+						<top>4.5</top>
+						<width>366</width>
+						<height>51</height>
+						<texturebg colordiffuse="00FFFFFF">../../media/mouse-osd_slider_nibNF.png</texturebg>
+						<midtexture colordiffuse="$INFO[Window(13000).Property(progress122.color)]">../../media/mouse-osd_slider_nib.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<animation center="auto" condition="String.IsEqual(Window(13000).Property(progress122.color),red)" effect="rotate" end="180" time="0">conditional</animation>
+					</control>
+					<control id="121" type="edit">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>60</height>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>230</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<shadowcolor>black</shadowcolor>
+						<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Radius 2:</label>
+						<hinttext>[COLOR=grey3][LIGHT]1 &lt;~&gt; 360[/LIGHT][/COLOR]</hinttext>
+						<onup>110</onup>
+						<ondown>130</ondown>
+					</control>
+				</control>
+
+				<control id="130" type="group">
+					<description>Angle - Polygon, Star</description>
+					<visible>String.IsEqual(Window(13000).Property(current.style),star) | String.IsEqual(Window(13000).Property(current.style),polygon)</visible>
+					<height>60</height>
+					<control id="132" type="progress">
+						<left>4.5</left>
+						<top>4.5</top>
+						<width>366</width>
+						<height>51</height>
+						<texturebg colordiffuse="00FFFFFF">../../media/mouse-osd_slider_nibNF.png</texturebg>
+						<midtexture colordiffuse="$INFO[Window(13000).Property(progress132.color)]">../../media/mouse-osd_slider_nib.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<animation center="auto" condition="String.IsEqual(Window(13000).Property(progress132.color),red)" effect="rotate" end="180" time="0">conditional</animation>
+					</control>
+					<control id="131" type="edit">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>60</height>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>230</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<shadowcolor>black</shadowcolor>
+						<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Angle:</label>
+						<hinttext>[COLOR=grey3][LIGHT]-360 &lt;~&gt; 360[/LIGHT][/COLOR]</hinttext>
+						<onup>120</onup>
+						<ondown>140</ondown>
+					</control>
+				</control>
+
+				<control id="140" type="group">
+					<description>Extend - Circle</description>
+					<visible>String.IsEqual(Window(13000).Property(current.style),circle)</visible>
+					<height>60</height>
+					<control id="142" type="progress">
+						<left>4.5</left>
+						<top>4.5</top>
+						<width>366</width>
+						<height>51</height>
+						<texturebg colordiffuse="00FFFFFF">../../media/mouse-osd_slider_nibNF.png</texturebg>
+						<midtexture colordiffuse="$INFO[Window(13000).Property(progress142.color)]">../../media/mouse-osd_slider_nib.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<animation center="auto" condition="String.IsEqual(Window(13000).Property(progress142.color),red)" effect="rotate" end="180" time="0">conditional</animation>
+					</control>
+					<control id="141" type="edit">
+						<left>0</left>
+						<top>0</top>
+						<width>375</width>
+						<height>60</height>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>230</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<shadowcolor>black</shadowcolor>
+						<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Extend:</label>
+						<hinttext>[COLOR=grey3][LIGHT]-360 &lt;~&gt; 360[/LIGHT][/COLOR]</hinttext>
+						<onup>130</onup>
+						<ondown>150</ondown>
+					</control>
+				</control>
+
+				<control id="150" type="edit">
+					<description>Time Animation</description>
+					<left>0</left>
+					<top>0</top>
+					<width>375</width>
+					<height>60</height>
+					<textoffsetx>10</textoffsetx>
+					<textwidth>230</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label>$LOCALIZE[180]:</label>
+					<hinttext>[COLOR=grey3][LIGHT]default 1000 ms[/LIGHT][/COLOR]</hinttext>
+					<visible>!String.IsEmpty(Window(13000).Property(current.style)) + !String.IsEqual(Window(13000).Property(current.style),track)</visible>
+				</control>
+				<control id="151" type="radiobutton">
+					<description>Animation by Kodi</description>
+					<height>60</height>
+					<width>375</width>
+					<textoffsetx>10</textoffsetx>
+					<textwidth>200</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label>Animation by Kodi</label>
+					<visible>String.IsEqual(Window(13000).Property(current.style),star) | String.IsEqual(Window(13000).Property(current.style),polygon) | String.IsEqual(Window(13000).Property(current.style),free)</visible>
+				</control>
+				<control id="152" type="radiobutton">
+					<description>ends with line</description>
+					<height>60</height>
+					<width>375</width>
+					<textoffsetx>10</textoffsetx>
+					<textwidth>200</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label>Close polygon</label>
+					<visible>String.IsEqual(Window(13000).Property(current.style),circle) | String.IsEqual(Window(13000).Property(current.style),free)</visible>
+				</control>
+				<control id="153" type="button">
+					<description>start</description>
+					<height>60</height>
+					<width>375</width>
+					<textoffsetx>10</textoffsetx>
+					<textwidth>200</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus border="5">../../media/mouse-button-focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label>335</label>
+					<enable>!String.IsEmpty(Window(13000).Property(current.style)) + !String.IsEqual(Window(13000).Property(current.style),track)</enable>
+				</control>
+
+			</control>
+
+		</control>
+
+		<control id="2000" type="group">
+			<description>Joystick Pointer Image</description>
+			<left>960</left>
+			<top>540</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>48</width>
+				<height>48</height>
+				<texture>../../media/mouse-pointer-focus-drag.png</texture>
+				<animation center="0,0" condition="Integer.IsGreater(Window(13000).Property(JoyPosX),1250)" effect="rotatey" end="180" time="100">conditional</animation>
+				<animation center="0,0" condition="Integer.IsGreater(Window(13000).Property(JoyPosY),690)" effect="rotatex" end="180" time="100">conditional</animation>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

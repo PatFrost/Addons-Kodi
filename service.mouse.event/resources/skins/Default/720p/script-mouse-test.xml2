@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<onload>SetProperty(current.color,FFFFFFFF)</onload>
+	<controls>
+		<control type="image">
+			<description>bg image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>../../media/mouse-black-back.png</texture>
+		</control>
+		<control type="group">
+			<depth>0.08</depth>
+			<control type="image">
+				<description>Section header bg image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>42</height>
+				<texture>../../media/mouse-black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>20</left>
+				<top>3</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_games.png</texture>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>20</left>
+				<top>3</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_events.png</texture>
+				<visible>Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="grouplist">
+				<left>65</left>
+				<top>5</top>
+				<width>1000</width>
+				<height>30</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="0" max="800">auto</width>
+					<height>30</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[system.addontitle(service.mouse.event)][COLOR=blue] - [/COLOR](x:$INFO[Window(home).Property(MousePosX)], y:$INFO[Window(home).Property(MousePosY)])</label>
+					<visible>Window.IsActive(Pointer.xml)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="0" max="800">auto</width>
+					<height>30</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Joystick[COLOR=blue] - [/COLOR](x:$INFO[Window.Property(JoyPosX)], y:$INFO[Window.Property(JoyPosY)])</label>
+					<visible>!Window.IsActive(Pointer.xml)</visible>
+				</control>
+			</control>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<left>84r</left>
+			<top>0</top>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>../../media/mouse-DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>../../media/mouse-DialogCloseButton.png</texturenofocus>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
+
+		<control type="group" id="10">
+			<depth>0.08</depth>
+			<left>20</left>
+			<top>55r</top>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<control type="button" id="21">
+				<description>undo push button</description>
+				<left>0</left>
+				<top>0</top>
+				<width>45</width>
+				<height>45</height>
+				<label>undo</label>
+				<font>-</font>
+				<texturefocus border="5">../../media/mouse-floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">../../media/mouse-floor_button.png</texturenofocus>
+				<onleft>20</onleft>
+				<onright>20</onright>
+				<onup>9002</onup>
+				<ondown>9003</ondown>
+			</control>
+			<control type="image">
+				<description>undo back Icon</description>
+				<left>5</left>
+				<top>5</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_back.png</texture>
+			</control>
+		</control>
+
+		<control type="group">
+			<left>-250</left>
+            <depth>0.15</depth>
+            <animation effect="slide" start="0,0" end="250,0" time="300" tween="quadratic" easing="out" condition="[ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)] + ![Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRadioRDSInfo)]">Conditional</animation>
+            <animation effect="slide" start="0,0" end="-300,0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001)">WindowClose</animation>
+            <animation effect="slide" start="0,0" end="-50,0" time="225" tween="quadratic" easing="out" condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9001)]">WindowClose</animation>
+            <animation effect="slide" start="-50,0" end="0,0" time="225" tween="quadratic" easing="out">WindowOpen</animation>
+            <control type="button" id="8999">
+                <description>Fake button for mouse control</description>
+                <left>0</left>
+                <top>0</top>
+                <width>250</width>
+                <height>720</height>
+                <label>-</label>
+                <font>-</font>
+                <texturenofocus>-</texturenofocus>
+                <texturefocus>-</texturefocus>
+                <visible>true</visible>
+            </control>
+            <control type="button" id="9001">
+                <left>250</left>
+                <top>260</top>
+                <width>42</width>
+                <height>128</height>
+                <font>-</font>
+                <texturefocus>HasSub.png</texturefocus>
+                <texturenofocus>HasSub.png</texturenofocus>
+            </control>
+            <control type="image">
+                <left>-20</left>
+                <top>0</top>
+                <width>280</width>
+                <height>720</height>
+                <texture border="0,0,10,0">MediaBladeSub.png</texture>
+            </control>
+            <control type="image">
+                <description>LOGO</description>
+                <left>0</left>
+                <top>0</top>
+                <width>250</width>
+                <height>80</height>
+                <aspectratio>keep</aspectratio>
+                <texture>kodi-logo.png</texture>
+            </control>
+			<control type="grouplist" id="9000">
+				<left>0</left>
+				<top>110</top>
+				<width>250</width>
+				<height>600</height>
+				<onleft>9000</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<control type="label" id="69">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>Options</label>
+					<textcolor>blue</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+<!-- 
+				<control type="radiobutton" id="70">
+					<description>Circle</description>
+					<include>ButtonCommonValues</include>
+					<label>Circle</label>
+                    <selected>String.Contains(Window.Property(current.style),circle)</selected>
+                    <onclick condition="!String.Contains(Window.Property(current.style),circle)">SetProperty(current.style,circle)</onclick>
+                    <onclick condition="String.Contains(Window.Property(current.style),circle)">ClearProperty(current.style)</onclick>
+				</control>
+				<control type="radiobutton" id="71">
+					<description>Polygon</description>
+					<include>ButtonCommonValues</include>
+					<label>Polygon</label>
+                    <selected>String.Contains(Window.Property(current.style),polygon)</selected>
+                    <onclick condition="!String.Contains(Window.Property(current.style),polygon)">SetProperty(current.style,polygon)</onclick>
+                    <onclick condition="String.Contains(Window.Property(current.style),polygon)">ClearProperty(current.style)</onclick>
+				</control>
+				<control type="radiobutton" id="72">
+					<description>Star</description>
+					<include>ButtonCommonValues</include>
+					<label>Star</label>
+                    <selected>String.Contains(Window.Property(current.style),star)</selected>
+                    <onclick condition="!String.Contains(Window.Property(current.style),star)">SetProperty(current.style,star)</onclick>
+                    <onclick condition="String.Contains(Window.Property(current.style),star)">ClearProperty(current.style)</onclick>
+				</control>
+                 -->
+				<control type="panel" id="9002">
+					<description>button menu</description>
+					<width>250</width>
+					<height>125</height>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>300</scrolltime>
+					<itemlayout height="62.5" width="62.5">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>62.5</width>
+							<height>62.5</height>
+							<texture border="3">KeyboardKeyNF.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>62.5</width>
+							<height>62.5</height>
+							<font>font10</font>
+							<textcolor>grey3</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="62.5" width="62.5">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>62.5</width>
+							<height>62.5</height>
+							<texture border="5">KeyboardKey.png</texture>
+							<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9002)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>62.5</width>
+							<height>62.5</height>
+							<font>font10</font>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<!-- <content>
+						<item id="1">
+							<label>Circle</label>
+							<label2></label2>
+                            <onclick condition="!String.Contains(Window.Property(current.style),circle)">SetProperty(current.style,circle)</onclick>
+                            <onclick condition="String.Contains(Window.Property(current.style),circle)">ClearProperty(current.style)</onclick>
+						</item>
+						<item id="2">
+							<label>Polygon</label>
+							<label2>Polygon vertex</label2>
+                            <onclick condition="!String.Contains(Window.Property(current.style),polygon)">SetProperty(current.style,polygon)</onclick>
+                            <onclick condition="String.Contains(Window.Property(current.style),polygon)">ClearProperty(current.style)</onclick>
+						</item>
+						<item id="3">
+							<label>Star</label>
+							<label2>Star peak</label2>
+                            <onclick condition="!String.Contains(Window.Property(current.style),star)">SetProperty(current.style,star)</onclick>
+                            <onclick condition="String.Contains(Window.Property(current.style),star)">ClearProperty(current.style)</onclick>
+						</item>
+						<item id="4">
+							<label>Free</label>
+							<label2></label2>
+                            <onclick condition="!String.Contains(Window.Property(current.style),free)">SetProperty(current.style,free)</onclick>
+                            <onclick condition="String.Contains(Window.Property(current.style),free)">ClearProperty(current.style)</onclick>
+						</item>
+						<item id="5">
+							<label>Text</label>
+							<label2></label2>
+							<onclick>SendClick(22)</onclick>
+						</item>
+					</content> -->
+				</control>
+
+				<control type="label" id="90">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>[COLOR=blue]Peak count:[/COLOR] $INFO[Control.GetLabel(91)]</label>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+                   <!--  <visible>String.Contains(Window.Property(current.style),star) | String.Contains(Window.Property(current.style),polygon)</visible> -->
+				</control>
+                <control type="slider" id="91">
+                    <description>Polygon vertex - Star peak</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>250</width>
+                    <height>20</height>
+                    <aligny>center</aligny>
+                    <sliderwidth>150</sliderwidth>
+                    <sliderheight>20</sliderheight>
+                    <texturesliderbar>osd_slider_bg.png</texturesliderbar>
+                    <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+                    <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                   <!--  <visible>String.Contains(Window.Property(current.style),star) | String.Contains(Window.Property(current.style),polygon)</visible> -->
+                </control>
+                
+				<control type="label" id="100">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>[COLOR=blue]Star Radius 1:[/COLOR] $INFO[Control.GetLabel(101)]</label>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+                <control type="slider" id="101">
+                    <description>Radius 1 - Circle, Polygon, Star</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>250</width>
+                    <height>20</height>
+                    <aligny>center</aligny>
+                    <sliderwidth>150</sliderwidth>
+                    <sliderheight>20</sliderheight>
+                    <texturesliderbar>osd_slider_bg.png</texturesliderbar>
+                    <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+                    <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                </control>
+                
+				<control type="label" id="200">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>[COLOR=blue]Star Radius 2:[/COLOR] $INFO[Control.GetLabel(201)]</label>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+                    <!-- <visible>String.Contains(Window.Property(current.style),star)</visible> -->
+				</control>
+                <control type="slider" id="201">
+                    <description>Radius 2 - Star</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>250</width>
+                    <height>20</height>
+                    <aligny>center</aligny>
+                    <sliderwidth>150</sliderwidth>
+                    <sliderheight>20</sliderheight>
+                    <texturesliderbar>osd_slider_bg.png</texturesliderbar>
+                    <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+                    <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                    <!-- <visible>String.Contains(Window.Property(current.style),star)</visible> -->
+                </control>
+                
+				<control type="label" id="300">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>[COLOR=blue]Star Angle:[/COLOR] $INFO[Control.GetLabel(301)]</label>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+                <control type="slider" id="301">
+                    <description>Angle - Polygon, Star</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>250</width>
+                    <height>20</height>
+                    <aligny>center</aligny>
+                    <sliderwidth>150</sliderwidth>
+                    <sliderheight>20</sliderheight>
+                    <texturesliderbar>osd_slider_bg.png</texturesliderbar>
+                    <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+                    <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                </control>
+                
+				<control type="label" id="400">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>[COLOR=blue]Circle Extend:[/COLOR] $INFO[Control.GetLabel(401)]</label>
+					<textcolor>white</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+                   <!--  <visible>String.Contains(Window.Property(current.style),circle)</visible> -->
+				</control>
+                <control type="slider" id="401">
+                    <description>Extend - Circle</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>250</width>
+                    <height>20</height>
+                    <aligny>center</aligny>
+                    <sliderwidth>150</sliderwidth>
+                    <sliderheight>20</sliderheight>
+                    <texturesliderbar>osd_slider_bg.png</texturesliderbar>
+                    <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+                    <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                    <!-- <visible>String.Contains(Window.Property(current.style),circle)</visible> -->
+                </control>
+			</control>
+            
+            <control type="image">
+                <description>current color image</description>
+                <left>15</left>
+                <top>75r</top>
+                <width>220</width>
+                <height>58</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="$INFO[Window.Property(current.color)]">../../media/picker-white.png</texture>
+                <bordertexture border="8">../../media/mouse-button-nofocus.png</bordertexture>
+                <bordersize>4</bordersize>
+            </control>
+		</control>
+        
+		<control type="group" id="2000">
+			<description>Joystick Pointer Image</description>
+			<left>640</left>
+			<top>360</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>32</width>
+				<height>32</height>
+				<texture>../../media/mouse-pointer-focus-drag.png</texture>
+				<animation effect="rotatey" center="0,0" end="180" time="100" condition="Integer.IsGreater(Window.Property(JoyPosX),1250)">conditional</animation>
+				<animation effect="rotatex" center="0,0" end="180" time="100" condition="Integer.IsGreater(Window.Property(JoyPosY),690)">conditional</animation>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+		</control>
+<!-- 
+		<control type="image">
+			<description>TEST</description>
+			<left>5</left>
+			<top>5</top>
+			<width>10</width>
+			<height>10</height>
+			<texture>../media/picker-white.png</texture>
+			<animation effect="rotate" end="-29.0546040991" center="auto" time="0" condition="true">conditional</animation>
+			<animation effect="zoom" end="5,5,731,10" time="3000" tween="quadratic" >WindowOpen</animation>
+			<visible>false</visible>
+		</control> -->
+	</controls>
+</window>

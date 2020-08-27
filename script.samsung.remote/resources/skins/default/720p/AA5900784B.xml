@@ -1,0 +1,750 @@
+<window>
+	<defaultcontrol always="true">150</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<system>1</system>
+		<left>545</left>
+		<top>0</top>
+	</coordinates>
+	<!-- set focus smart hub -->
+	<onload>Control.Move(150,8)</onload>
+	<onload>Right</onload>
+	<controls>
+		<control type="group">
+			<description>Fake onclick button for content item. because, default onclick in listitem does not work in python code.</description>
+			<visible>false</visible>
+			<control type="button" id="1150"><description>container 150 onclick button</description></control>
+			<control type="button" id="1151"><description>container 151 onclick button</description></control>
+			<control type="button" id="1152"><description>container 152 onclick button</description></control>
+		</control>
+
+		<control type="image">
+			<left>-545</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black-back.png</texture>
+		</control>
+		<control type="image">
+			<description>Dialog image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>190</width>
+			<height>720</height>
+			<texture border="40">DialogBack.png</texture>
+		</control>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<left>20</left>
+			<top>16</top>
+			<width>150</width>
+			<height>40</height>
+			<texture>dialogheader.png</texture>
+		</control>
+		<control type="label" id="311">
+			<description>header label</description>
+			<left>20</left>
+			<top>20</top>
+			<width>150</width>
+			<height>34</height>
+			<font>font10_title</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>blue</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>Samsung[CR]AA5900784B</label>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<left>130</left>
+			<top>15</top>
+			<width>44</width>
+			<height>30</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
+
+		<control type="panel" id="150">
+			<left>20</left>
+			<top>60</top>
+			<width>152</width>
+			<height>482</height>
+			<onleft>150</onleft>
+			<onright>150</onright>
+			<onup>152</onup>
+			<ondown>151</ondown>
+			<viewtype label="">list</viewtype>
+			<pagecontrol>-</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<orientation>vertical</orientation>
+			<itemlayout height="40" width="50">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>40</height>
+					<texture border="5">floor_button.png</texture>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>40</height>
+					<font>font10</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="40" width="50">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>40</height>
+					<texture border="5">floor_buttonFO.png</texture>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>30</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>40</height>
+					<font>font10</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>Power</label>
+					<label2>TV</label2>
+					<icon>icon_power2.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=BD_KEY_POWER</property>
+				</item>
+				<item id="2">
+					<label>Source</label>
+					<label2>SRC</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_SOURCE&amp;wait=500</property>
+				</item>
+				<item id="3">
+					<label>STB Power</label>
+					<label2>STB</label2>
+					<icon>icon_power2.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_EXT11&amp;wait=500</property>
+				</item>
+
+				<item id="4">
+					<label>STB Source</label>
+					<label2>STB[CR]SRC</label2>
+					<!-- <label>Light</label> -->
+					<!-- <label2>LIGHT</label2> -->
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_EXT20&amp;wait=500</property>
+				</item>
+				<item id="5">
+					<label>STB Guide</label>
+					<label2>STB[CR]GUIDE</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_HDMI4&amp;wait=500;sendkey=KEY_DOWN&amp;wait=500;sendkey=KEY_ENTER&amp;wait=500</property>
+				</item>
+				<item id="6">
+					<label>STB Menu</label>
+					<label2>STB[CR]MENU</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_EXT27&amp;wait=500</property>
+				</item>
+
+				<item id="7">
+					<label>$NUMBER[1]</label>
+					<label2>$NUMBER[1]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_1&amp;wait=500</property>
+				</item>
+				<item id="8">
+					<label>$NUMBER[2]</label>
+					<label2>$NUMBER[2]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_2&amp;wait=500</property>
+				</item>
+				<item id="9">
+					<label>$NUMBER[3]</label>
+					<label2>$NUMBER[3]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_3&amp;wait=500</property>
+				</item>
+
+				<item id="10">
+					<label>$NUMBER[4]</label>
+					<label2>$NUMBER[4]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_4&amp;wait=500</property>
+				</item>
+				<item id="11">
+					<label>$NUMBER[5]</label>
+					<label2>$NUMBER[5]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_5&amp;wait=500</property>
+				</item>
+				<item id="12">
+					<label>$NUMBER[6]</label>
+					<label2>$NUMBER[6]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_6&amp;wait=500</property>
+				</item>
+
+				<item id="13">
+					<label>$NUMBER[7]</label>
+					<label2>$NUMBER[7]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_7&amp;wait=500</property>
+				</item>
+				<item id="14">
+					<label>$NUMBER[8]</label>
+					<label2>$NUMBER[8]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_8&amp;wait=500</property>
+				</item>
+				<item id="15">
+					<label>$NUMBER[9]</label>
+					<label2>$NUMBER[9]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_9&amp;wait=500</property>
+				</item>
+
+				<item id="16">
+					<label>—</label>
+					<label2>—</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_PLUS100&amp;wait=500</property>
+				</item>
+				<item id="17">
+					<label>$NUMBER[0]</label>
+					<label2>$NUMBER[0]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_0&amp;wait=500</property>
+				</item>
+				<item id="18">
+					<label>PRE-CH</label>
+					<label2>PRE[CR]CH</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_PRECH&amp;wait=500</property>
+				</item>
+
+				<item id="19">
+					<label>Vol Up</label>
+					<label2>VOL[CR]UP</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_VOLUP&amp;wait=500</property>
+				</item>
+				<item id="20">
+					<label>Mute</label>
+					<label2>MUTE</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_MUTE&amp;wait=500</property>
+				</item>
+				<item id="21">
+					<label>Ch Up</label>
+					<label2>CH[CR]UP</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_CHUP&amp;wait=500</property>
+				</item>
+
+				<item id="22">
+					<label>Vol Down</label>
+					<label2>VOL[CR]DOWN</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_VOLDOWN&amp;wait=500</property>
+				</item>
+				<item id="23">
+					<label>Ch List</label>
+					<label2>CH[CR]LIST</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_CH_LIST&amp;wait=500</property>
+				</item>
+				<item id="24">
+					<label>Ch Down</label>
+					<label2>CH[CR]DOWN</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_CHDOWN&amp;wait=500</property>
+				</item>
+
+				<item id="25">
+					<label>Menu</label>
+					<label2>MENU</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_MENU&amp;wait=500</property>
+				</item>
+				<item id="26">
+					<label>Smart Hub</label>
+					<label2>-</label2>
+					<icon>smarthub.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_CONTENTS&amp;wait=500</property>
+				</item>
+				<item id="27">
+					<label>Guide</label>
+					<label2>GUIDE</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_GUIDE&amp;wait=500</property>
+				</item>
+
+				<item id="28">
+					<label>Tools</label>
+					<label2>TOOLS</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_TOOLS&amp;wait=500</property>
+				</item>
+				<item id="29">
+					<label>Up</label>
+					<label2>-</label2>
+					<icon>scroll-up.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_UP&amp;wait=500</property>
+				</item>
+				<item id="30">
+					<label>Info</label>
+					<label2>INFO</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_INFO&amp;wait=500</property>
+				</item>
+
+				<item id="31">
+					<label>Left</label>
+					<label2>-</label2>
+					<icon>scroll-left.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_LEFT&amp;wait=500</property>
+				</item>
+				<item id="32">
+					<label>Enter</label>
+					<label2>OK</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_ENTER&amp;wait=500</property>
+				</item>
+				<item id="33">
+					<label>Right</label>
+					<label2>-</label2>
+					<icon>scroll-right.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_RIGHT&amp;wait=500</property>
+				</item>
+
+				<item id="34">
+					<label>Return</label>
+					<label2>RTN</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_RETURN&amp;wait=500</property>
+				</item>
+				<item id="35">
+					<label>Down</label>
+					<label2>-</label2>
+					<icon>scroll-down.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_DOWN&amp;wait=500</property>
+				</item>
+				<item id="36">
+					<label>Exit</label>
+					<label2>EXIT</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1150)</onclick>
+					<property name="sendkeys">sendkey=KEY_EXIT&amp;wait=500</property>
+				</item>
+			</content>
+		</control>
+
+		<control type="panel" id="151">
+			<left>20</left>
+			<top>542</top>
+			<width>152</width>
+			<height>38</height>
+			<onleft>151</onleft>
+			<onright>151</onright>
+			<onup>150</onup>
+			<ondown>152</ondown>
+			<viewtype label="">list</viewtype>
+			<pagecontrol>-</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<orientation>vertical</orientation>
+			<itemlayout height="38" width="38">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<texture colordiffuse="red" border="5">floor_button.png</texture>
+					<visible>StringCompare(ListItem.Label,Red)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<texture colordiffuse="green" border="5">floor_button.png</texture>
+					<visible>StringCompare(ListItem.Label,Green)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<texture colordiffuse="yellow" border="5">floor_button.png</texture>
+					<visible>StringCompare(ListItem.Label,Yellow)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<texture colordiffuse="blue" border="5">floor_button.png</texture>
+					<visible>StringCompare(ListItem.Label,Blue)</visible>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<font>font10</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="38" width="38">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<texture border="5">floor_buttonFO.png</texture>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>37</width>
+					<height>37</height>
+					<font>font12</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="37">
+					<label>Red</label>
+					<label2>[COLOR=red]A[/COLOR]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1151)</onclick>
+					<property name="sendkeys">sendkey=KEY_RED&amp;wait=500</property>
+				</item>
+				<item id="38">
+					<label>Green</label>
+					<label2>[COLOR=green]B[/COLOR]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1151)</onclick>
+					<property name="sendkeys">sendkey=KEY_GREEN&amp;wait=500</property>
+				</item>
+				<item id="39">
+					<label>Yellow</label>
+					<label2>[COLOR=yellow]C[/COLOR]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1151)</onclick>
+					<property name="sendkeys">sendkey=KEY_YELLOW&amp;wait=500</property>
+				</item>
+				<item id="40">
+					<label>Blue</label>
+					<label2>[COLOR=blue]D[/COLOR]</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1151)</onclick>
+					<property name="sendkeys">sendkey=KEY_CYAN&amp;wait=500</property>
+				</item>
+			</content>
+		</control>
+
+		<control type="panel" id="152">
+			<left>20</left>
+			<top>580</top>
+			<width>152</width>
+			<height>122</height>
+			<onleft>152</onleft>
+			<onright>152</onright>
+			<onup>151</onup>
+			<ondown>150</ondown>
+			<viewtype label="">list</viewtype>
+			<pagecontrol>-</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<orientation>vertical</orientation>
+			<itemlayout height="30" width="50">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>30</height>
+					<texture border="5">floor_button.png</texture>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>20</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>30</height>
+					<font>font10</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="30" width="50">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>30</height>
+					<texture border="5">floor_buttonFO.png</texture>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>20</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>30</height>
+					<font>font10</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label2,[B],[/B]]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="41">
+					<label>Netflix</label>
+					<label2>-</label2>
+					<icon>Netflix.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_EXT30&amp;wait=500</property>
+				</item>
+				<item id="42">
+					<label>Web Browser</label>
+					<label2>WEB</label2>
+					<!-- <label>Status</label> -->
+					<!-- <label2>STS</label2> -->
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_CONVERGENCE&amp;wait=500</property>
+				</item>
+				<item id="43">
+					<label>Search</label>
+					<label2>-</label2>
+					<icon>icon_search.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_DTV_SIGNAL&amp;wait=3000</property>
+				</item>
+
+				<item id="44">
+					<label>E-Manual</label>
+					<label2>E-M</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_TOPMENU&amp;wait=500</property>
+				</item>
+				<item id="45">
+					<label>Recommend</label>
+					<label2>HIS</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_AUTO_ARC_CAPTION_ENG&amp;wait=500</property>
+				</item>
+				<item id="46">
+					<label>More</label>
+					<label2>MORE</label2>
+					<icon>-</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_HDMI4&amp;wait=500</property>
+				</item>
+
+				<item id="47">
+					<label>Rewind &#60;&#60;</label>
+					<label2>-</label2>
+					<icon>PlayerControls-RewindNF.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_REWIND&amp;wait=500</property>
+				</item>
+				<item id="48">
+					<label>Pause</label>
+					<label2>-</label2>
+					<icon>PlayerControls-PauseNF.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_PAUSE&amp;wait=500</property>
+				</item>
+				<item id="49">
+					<label>FF &#62;&#62;</label>
+					<label2>-</label2>
+					<icon>PlayerControls-ForwardNF.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_FF&amp;wait=500</property>
+				</item>
+
+				<item id="50">
+					<label>Record</label>
+					<label2>-</label2>
+					<icon>PlayerControls-Recording.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_REC&amp;wait=500</property>
+				</item>
+				<item id="51">
+					<label>Play</label>
+					<label2>-</label2>
+					<icon>PlayerControls-PlayNF.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_PLAY&amp;wait=500</property>
+				</item>
+				<item id="52">
+					<label>Stop</label>
+					<label2>-</label2>
+					<icon>PlayerControls-StopNF.png</icon>
+					<thumb>-</thumb>
+					<onclick>SendClick(1152)</onclick>
+					<property name="sendkeys">sendkey=KEY_STOP&amp;wait=500</property>
+				</item>
+			</content>
+		</control>
+
+	</controls>
+</window>

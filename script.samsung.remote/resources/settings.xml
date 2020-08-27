@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <!-- General -->
+  <category label="$LOCALIZE[128]">
+    <setting id="autosam" type="action" label="Auto setup Samsung device..." action="RunScript($CWD/lib/samdevices.py)" default="$LOCALIZE[413]" />
+    <setting id="manualsam" type="bool" label="$LOCALIZE[413]" default="true" visible="false"/>
+    <setting id="dummy" type="lsep" label="$LOCALIZE[19020]" />
+    <setting id="tvname" label="Friendly Name" type="text" default="[TV] Samsung LED40" enable="eq(-2,true)" />
+    <setting id="tvmodel" label="Model" type="text" default="UN40F5500" enable="eq(-3,true)" />
+    <setting id="dummy" type="sep" />
+    <setting id="tvip" label="$LOCALIZE[719]" type="ipaddress" default="" enable="eq(-5,true)" />
+    <setting id="tvport" label="$LOCALIZE[730] (default: 55000)" type="number" default="55000" subsetting="true" enable="eq(-6,true)" />
+
+    <setting id="dummy" type="lsep" label="$LOCALIZE[790]" />
+    <setting id="remote" label="$LOCALIZE[166] (Model)" type="fileenum" default="iRemote.xml" mask=".xml" values="/resources/skins/default/720p/" />
+  </category>
+
+  <category label="Events">
+    <setting id="enabled" type="bool" default="true" label="$LOCALIZE[305]" />
+    <!-- on startup kodi -->
+    <setting id="dummy" type="sep" />
+    <setting id="activate_source" type="bool" default="true" label="$LOCALIZE[36020]" />
+    <setting id="kodi_source" type="select" label="Kodi source on Samsung device" default="HDMI 2" values="HDMI 1|HDMI 2|HDMI 3|HDMI (Switch HDMI Input)|Component 1|Av 1" enable="eq(-1,true)" subsetting="true" />
+    <setting id="vol_on_startup" type="slider" default="0" range="-30,1,30" option="int" label="Startup volume [B]±[/B] (0 = $LOCALIZE[36028])" />
+    <!-- on stopped/ended kodi -->
+    <setting id="dummy" type="sep" />
+    <setting id="inactive_source" type="bool" default="true" label="$LOCALIZE[36025]" />
+    <setting id="ended_source" type="select" label="Auto select source on Kodi ended" default="HDMI 1" values="HDMI 1|HDMI 2|HDMI 3|HDMI (Switch HDMI Input)|Component 1|Av 1|TV|Custom" enable="eq(-1,true)" subsetting="true" />
+    <setting id="custom_name" type="action" label="-- Custom source" action="RunScript($CWD/lib/services.py)" default=""  visible="eq(-1,Custom)" />
+    <setting id="custom_source" type="text" label="-- Custom send keys" default="" visible="false" />
+    <setting id="vol_on_ended" type="slider" default="0" range="-30,1,30" option="int" label="Ended volume [B]±[/B] (0 = $LOCALIZE[36028])" />
+    <!-- on playback -->
+    <!-- <setting id="dummy" type="lsep" label="$LOCALIZE[14086]" /> -->
+    <setting id="dummy" type="sep" />
+    <setting id="refresh_kodi_source" type="bool" default="false" label="On playback started refresh Kodi source on Samsung device" />
+    <setting id="vol_on_playback_started" type="slider" default="0" range="-30,1,30" option="int" label="Volume [B]±[/B] on playback started (0 = $LOCALIZE[36028])" />
+    <setting id="vol_on_playback_ended" type="slider" default="0" range="-30,1,30" option="int" label="Volume [B]±[/B] on playback ended/stopped (0 = $LOCALIZE[36028])" />
+  </category>
+
+</settings>

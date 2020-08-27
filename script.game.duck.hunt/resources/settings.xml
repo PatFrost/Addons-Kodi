@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <setting id="playsfx" type="bool" label="Play Sounds FX" default="true" />
+    <setting id="bullets" type="slider" label="Max bullets in cartridge" option="int" range="12,1,30"  default="30" />
+    <setting id="username" type="text" label="$LOCALIZE[1014]" default="" visible="false" />
+</settings>
+

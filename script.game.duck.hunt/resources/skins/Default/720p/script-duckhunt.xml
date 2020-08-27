@@ -1,0 +1,811 @@
+<window id="3001">
+	<defaultcontrol always="true">299</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image" id="1">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>sky.png</texture>
+			<animation effect="fade" start="100" end="90" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),9999)">conditional</animation>
+			<animation effect="fade" start="100" end="80" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),29999)">conditional</animation>
+			<animation effect="fade" start="100" end="70" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),49999)">conditional</animation>
+			<animation effect="fade" start="100" end="60" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),69999)">conditional</animation>
+			<animation effect="fade" start="100" end="50" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),89999)">conditional</animation>
+			<animation effect="fade" start="100" end="40" time="2000" condition="IntegerGreaterThan(Container(50).Property(score),99999)">conditional</animation>
+		</control>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="1280,0" time="1000000" pulse="true" tween="quadratic" easing="inout" condition="true">Conditional</animation>
+			<control type="image">
+				<description>background mountains image</description>
+				<posx>-1280</posx>
+				<posy>400</posy>
+				<width>1280</width>
+				<height>200</height>
+				<texture flipx="true">mountains.png</texture>
+			</control>
+			<control type="image">
+				<description>background mountains image</description>
+				<posx>0</posx>
+				<posy>400</posy>
+				<width>1280</width>
+				<height>200</height>
+				<texture>mountains.png</texture>
+			</control>
+		</control>
+
+		<control type="group">
+			<posy>5</posy>
+			<control type="label">
+				<description>Top score label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font10</font>
+				<textcolor>darkred</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(hiscore),Top Score[CR]]</label>
+			</control>
+			<control type="label">
+				<description>score label</description>
+				<posx>20</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font28_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(score)]</label>
+			</control>
+			<control type="label">
+				<description>Level label</description>
+				<posx>20</posx>
+				<posy>25</posy>
+				<width>200</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(gamelevel),Lv.]</label>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+				<control type="label">
+					<description>clock label</description>
+					<posx>20r</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font28_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[System.Time]</label>
+				</control>
+				<control type="label">
+					<description>time played label</description>
+					<posx>20r</posx>
+					<posy>25</posy>
+					<width>200</width>
+					<height>30</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container(50).Property(time)]</label>
+				</control>
+			</control>
+		</control>
+
+		<control type="multiimage">
+			<description>cloud 1 image</description>
+			<posx>20</posx>
+			<posy>30</posy>
+			<width>600</width>
+			<height>300</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath background="true">$INFO[Window.Property(sprites_dir)]clouds</imagepath>
+			<timeperimage>25000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>3000</fadetime>
+			<animation effect="slide" start="1280,0" end="-640,0" time="50000" loop="true" tween="quadratic" easing="in" condition="true">Conditional</animation>
+		</control>
+		<control type="image">
+			<description>tree image</description>
+			<posx>615</posx>
+			<posy>500</posy>
+			<width>50</width>
+			<height>100</height>
+			<texture>tree.png</texture>
+			<colordiffuse>orange</colordiffuse>
+			<animation effect="zoom" center="640,600" start="1" end="300" time="50000" reversible="false" condition="!IsEmpty(Container(50).Property(gamestarted))">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,100" time="1000" condition="IsEmpty(Container(50).Property(gamestarted))">Conditional</animation>
+		</control>
+
+		<control type="button" id="299">
+			<description>click fail</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<label>-</label>
+			<font>-</font>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+		</control>
+
+		<control type="group">
+			<description>On Game - birds groups</description>
+			<visible>IsEmpty(Container(50).Property(paused))</visible>
+			<animation effect="rotatey" center="auto" start="0" end="-720" time="100000" loop="true" tween="easing" easing="inout" reversible="false" condition="!IsEmpty(Container(50).Property(ongamec))">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-200" time="50000" pulse="true" tween="easing" easing="inout" reversible="false" condition="!IsEmpty(Container(50).Property(ongamec))">conditional</animation>
+			<control type="group" id="100">
+				<description>On Game A - bird 1 group</description>
+				<animation effect="slide" start="0,0" end="0,600" time="3000" reversible="false" tween="quadratic" easing="out" condition="SubString(Control.GetLabel(101),dropped)">Conditional</animation>
+				<animation effect="slide" start="0,360" end="1400,-400" time="4000" delay="5300" reversible="false" condition="!IsEmpty(Container(50).Property(onnextlevel))">Conditional</animation>
+				<posx>600</posx>
+				<posy>200</posy>
+				<width>80</width> <!-- required: python code keep this info -->
+				<height>80</height> <!-- required: python code keep this info -->
+				<control type="label">
+					<description>bird pts label</description>
+					<posx>-20</posx>
+					<posy>25</posy>
+					<width>100</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container(50).Property(bird1_pts),[B]+,[/B]]</label>
+					<animation effect="slide" start="0,0" end="0,-1280" time="4000" reversible="false" condition="!IsEmpty(Container(50).Property(bird1_pts))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="50,0" time="500" reversible="false" pulse="true" condition="!IsEmpty(Container(50).Property(bird1_pts))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="2000" delay="2000" reversible="false" condition="!IsEmpty(Container(50).Property(bird1_pts))">Conditional</animation>
+				</control>
+				<control type="image" id="101">
+					<description>bird 1 image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird1-flying.gif</texture>
+					<animation effect="rotatey" center="40,0" start="0" end="-180" time="250" condition="SubString(Container(50).Property(flying1_direction),left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying1_direction),top_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying1_direction),bottom_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying1_direction),top_right)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying1_direction),bottom_right)">Conditional</animation>
+				</control>
+				<control type="button" id="102">
+					<description>bird 1 pulled</description>
+					<hitrect x="10" y="20" w="60" h="40" />
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>target.png</texturefocus>
+					<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+					<onclick>SetFocus(299)</onclick>
+				</control>
+			</control>
+
+			<control type="group" id="200">
+				<description>On Game B - bird 2 group</description>
+				<visible>!IsEmpty(Container(50).Property(onnextlevel)) | !IsEmpty(Container(50).Property(ongameb)) | !IsEmpty(Container(50).Property(ongamex)) | !IsEmpty(Container(50).Property(ongamec))</visible>
+				<animation effect="slide" start="0,0" end="0,600" time="3000" reversible="false" tween="quadratic" easing="out" condition="SubString(Control.GetLabel(201),dropped)">Conditional</animation>
+				<animation effect="slide" start="50,360" end="1400,-400" time="4000" delay="5400" reversible="false" condition="!IsEmpty(Container(50).Property(onnextlevel))">Conditional</animation>
+				<posx>400</posx>
+				<posy>200</posy>
+				<width>80</width> <!-- required: python code keep this info -->
+				<height>80</height> <!-- required: python code keep this info -->
+				<control type="label">
+					<description>bird pts label</description>
+					<posx>-20</posx>
+					<posy>25</posy>
+					<width>100</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container(50).Property(bird2_pts),[B]+,[/B]]</label>
+					<animation effect="slide" start="0,0" end="0,-1280" time="4000" reversible="false" condition="!IsEmpty(Container(50).Property(bird2_pts))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="50,0" time="500" reversible="false" pulse="true" condition="!IsEmpty(Container(50).Property(bird2_pts))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="2000" delay="2000" reversible="false" condition="!IsEmpty(Container(50).Property(bird2_pts))">Conditional</animation>
+				</control>
+				<control type="image" id="201">
+					<description>bird 2 image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird2-flying.gif</texture>
+					<animation effect="rotatey" center="40,0" start="0" end="-180" time="250" condition="SubString(Container(50).Property(flying2_direction),left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying2_direction),top_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying2_direction),bottom_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying2_direction),top_right)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying2_direction),bottom_right)">Conditional</animation>
+				</control>
+				<control type="button" id="202">
+					<description>bird 2 pulled</description>
+					<hitrect x="10" y="20" w="60" h="40" />
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>target.png</texturefocus>
+					<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+					<onclick>SetFocus(299)</onclick>
+				</control>
+			</control>
+
+			<control type="group" id="300">
+				<description>used for animation - bird 3 group</description>
+				<visible>!IsEmpty(Container(50).Property(onnextlevel)) | !IsEmpty(Container(50).Property(ongamex)) | !IsEmpty(Container(50).Property(ongamec))</visible>
+				<animation effect="slide" start="0,0" end="0,600" time="3000" reversible="false" tween="quadratic" easing="out" condition="SubString(Control.GetLabel(301),dropped)">Conditional</animation>
+				<animation effect="slide" start="-150,360" end="1400,-500" time="4000" delay="5500" reversible="false" condition="!IsEmpty(Container(50).Property(onnextlevel))">Conditional</animation>
+				<posx>800</posx>
+				<posy>200</posy>
+				<width>80</width> <!-- required: python code keep this info -->
+				<height>80</height> <!-- required: python code keep this info -->
+				<control type="label">
+					<description>bird pts label</description>
+					<posx>-20</posx>
+					<posy>25</posy>
+					<width>100</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container(50).Property(bird3_pts),[B]+,[/B]]</label>
+					<animation effect="slide" start="0,0" end="0,-1280" time="4000" reversible="false" condition="!IsEmpty(Container(50).Property(bird3_pts))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="50,0" time="500" reversible="false" pulse="true" condition="!IsEmpty(Container(50).Property(bird3_pts))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="2000" delay="2000" reversible="false" condition="!IsEmpty(Container(50).Property(bird3_pts))">Conditional</animation>
+				</control>
+				<control type="image" id="301">
+					<description>bird 3 image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird3-flying.gif</texture>
+					<animation effect="rotatey" center="40,0" start="0" end="-180" time="250" condition="SubString(Container(50).Property(flying3_direction),left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying3_direction),top_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying3_direction),bottom_left)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="25" time="250" condition="SubString(Container(50).Property(flying3_direction),top_right)">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-45" time="250" condition="SubString(Container(50).Property(flying3_direction),bottom_right)">Conditional</animation>
+				</control>
+				<control type="button" id="302">
+					<description>bird 3 pulled</description>
+					<hitrect x="10" y="20" w="60" h="40" />
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>target.png</texturefocus>
+					<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+					<onclick>SetFocus(299)</onclick>
+				</control>
+			</control>
+		</control>
+
+		<control type="multiimage">
+			<description>cloud 2 image</description>
+			<posx>640</posx>
+			<posy>0</posy>
+			<width>640</width>
+			<height>360</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath flipx="true" background="true">$INFO[Window.Property(sprites_dir)]clouds</imagepath>
+			<timeperimage>20000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>3000</fadetime>
+			<animation effect="slide" start="1920,0" end="-1280,0" time="60000" loop="true" tween="quadratic" easing="out" condition="true">Conditional</animation>
+		</control>
+
+		<control type="group">
+			<visible>IsEmpty(Window.Property(dog_pulled)) + !IsEmpty(Container(50).Property(gamestarted))</visible>
+			<control type="group">
+				<visible>!IsEmpty(Container(50).Property(dog_bird1_pull)) | !IsEmpty(Container(50).Property(dog_bird2_pull)) | !IsEmpty(Container(50).Property(dog_bird3_pull))</visible>
+				<animation effect="slide" start="0,0" end="0,-150" time="1000" tween="back" easing="out">Visible</animation>
+				<animation effect="slide" start="0,-150" end="0,0" time="1000" tween="quadratic" easing="out">Hidden</animation>
+				<posx>578</posx>
+				<posy>114r</posy>
+				<control type="image">
+					<description>bird 1 catched image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>124</width>
+					<height>114</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[Container(50).Property(bird_1_catched)]</texture>
+				</control>
+				<control type="image">
+					<description>bird 2 catched image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>124</width>
+					<height>114</height>
+					<aspectratio>keep</aspectratio>
+					<texture flipx="true">$INFO[Container(50).Property(bird_2_catched)]</texture>
+					<visible>IsEmpty(Container(50).Property(dog_bird1_pull))</visible>
+				</control>
+				<control type="multiimage">
+					<description>dog catch two birds image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>124</width>
+					<height>114</height>
+					<aspectratio>keep</aspectratio>
+					<imagepath>$INFO[Window.Property(sprites_dir),,dog/catch2]</imagepath>
+					<timeperimage>150</timeperimage>
+					<fadetime>0</fadetime>
+					<visible>IsEmpty(Container(50).Property(dog_bird1_pull)) + !IsEmpty(Container(50).Property(bird_2_catched))</visible>
+				</control>
+				<control type="image">
+					<description>bird 3 catched image</description>
+					<posx>-41</posx>
+					<posy>5</posy>
+					<width>124</width>
+					<height>114</height>
+					<aspectratio>keep</aspectratio>
+					<texture flipy="true">$INFO[Container(50).Property(bird_3_catched)]</texture>
+					<visible>!IsEmpty(Container(50).Property(dog_bird3_pull))</visible>
+				</control>
+				<control type="multiimage">
+					<description>dog catch one bird image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>124</width>
+					<height>114</height>
+					<aspectratio>keep</aspectratio>
+					<imagepath>$INFO[Window.Property(sprites_dir),,dog/catch1]</imagepath>
+					<timeperimage>150</timeperimage>
+					<fadetime>0</fadetime>
+					<visible>IsEmpty(Container(50).Property(dog_bird2_pull)) + IsEmpty(Container(50).Property(dog_bird3_pull)) + !IsEmpty(Container(50).Property(bird_1_catched))</visible>
+				</control>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="0,0" end="0,-150" time="2000" tween="quadratic" easing="out" condition="IsEmpty(Window.Property(dog_pulled))">Visible</animation>
+				<animation effect="slide" start="0,-150" end="0,0" time="2000" tween="quadratic" easing="out" condition="IsEmpty(Window.Property(dog_pulled))">Hidden</animation>
+				<visible>!IsEmpty(Container(50).Property(bird_escape))</visible>
+				<posx>604</posx>
+				<posy>112r</posy>
+				<control type="multiimage">
+					<description>dog laugh image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>72</width>
+					<height>112</height>
+					<aspectratio>keep</aspectratio>
+					<imagepath background="true">$INFO[Window.Property(sprites_dir)]dog/laugh</imagepath>
+					<timeperimage>100</timeperimage>
+					<fadetime>0</fadetime>
+				</control>
+				<control type="button">
+					<description>dog laugh pulled button</description>
+					<posx>5</posx>
+					<posy>25</posy>
+					<width>62</width>
+					<height>62</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>target.png</texturefocus>
+					<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+					<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">SetProperty(dog_pulled,$INFO[Window.Property(sprites_dir),,dog/shot])</onclick>
+					<onclick>SetFocus(299)</onclick>
+				</control>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>dog jump 3 image</description>
+			<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+			<animation effect="fade" start="0" end="100" delay="2000">Visible</animation>
+			<animation effect="fade" start="100" end="0" delay="2000">Hidden</animation>
+			<control type="image">
+				<posx>580</posx>
+				<posy>520</posy>
+				<width>120</width>
+				<height>120</height>
+				<texture>$INFO[Window.Property(sprites_dir)]dog/jump/3.png</texture>
+				<fadetime>0</fadetime>
+				<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+				<animation type="Visible">
+					<effect type="slide" start="0,-80" end="0,40" time="1050" delay="2100" />
+					<effect type="fade" start="0" end="100" time="0" delay="2100" />
+				</animation>
+			</control>
+		</control>
+		<control type="image">
+			<description>background overlay 1 image</description>
+			<posx>0</posx>
+			<posy>402r</posy>
+			<width>1280</width>
+			<height>402</height>
+			<texture>weeds.png</texture>
+			<visible>IsEmpty(Container(50).Property(gamestarted))</visible>
+			<animation effect="fade" start="0" end="100" delay="2100">Hidden</animation>
+		</control>
+		<control type="multiimage">
+			<description>dog walking image</description>
+			<animation effect="slide" start="100,0" end="1380,0" time="4200" pulse="true" reversible="false" condition="!IsEmpty(Container(50).Property(gamestarted))">Conditional</animation>
+			<animation effect="slide" start="0,0" end="1400,0" time="60000" loop="true" reversible="false" condition="IsEmpty(Container(50).Property(gamestarted))">Conditional</animation>
+			<posx>-120</posx>
+			<posy>520</posy>
+			<width>120</width>
+			<height>120</height>
+			<imagepath background="true">$INFO[Window.Property(sprites_dir)]dog/walking</imagepath>
+			<timeperimage>100</timeperimage>
+			<fadetime>0</fadetime>
+			<visible>IsEmpty(Window.Property(dog_pulled)) + IsEmpty(Container(50).Property(bird_escape)) + IsEmpty(Container(50).Property(dog_bird1_pull)) + IsEmpty(Container(50).Property(dog_bird2_pull))</visible>
+		</control>
+		<control type="image">
+			<description>background overlay 2 image</description>
+			<posx>0</posx>
+			<posy>402r</posy>
+			<width>1280</width>
+			<height>402</height>
+			<texture>weeds.png</texture>
+			<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+			<animation effect="fade" start="0" end="100" delay="2000">Visible</animation>
+		</control>
+		<control type="multiimage">
+			<description>dog pulled image</description>
+			<posx>580</posx>
+			<posy>520</posy>
+			<width>120</width>
+			<height>120</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath background="true">$INFO[Window.Property(dog_pulled)]</imagepath>
+			<timeperimage>100</timeperimage>
+			<fadetime>0</fadetime>
+			<loop>no</loop>
+			<visible>!IsEmpty(Window.Property(dog_pulled))</visible>
+			<animation effect="slide" start="0,-60" end="0,0" time="1000">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,-60">Hidden</animation>
+		</control>
+		<control type="group">
+			<description>dog jump</description>
+			<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+			<animation effect="fade" start="0" end="100" delay="2000">Visible</animation>
+			<animation effect="fade" start="100" end="0" delay="2000">Hidden</animation>
+			<control type="image">
+				<description>dog jump 2 image</description>
+				<posx>580</posx>
+				<posy>520</posy>
+				<width>120</width>
+				<height>120</height>
+				<texture>$INFO[Window.Property(sprites_dir)]dog/jump/2.png</texture>
+				<fadetime>0</fadetime>
+				<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+				<animation type="Visible">
+					<effect type="slide" start="0,0" end="0,-80" time="1050" delay="1050" />
+					<effect type="fade" start="100" end="0" time="0" delay="2100" />
+				</animation>
+			</control>
+			<control type="image">
+				<description>dog jump 1 image</description>
+				<posx>580</posx>
+				<posy>520</posy>
+				<width>120</width>
+				<height>120</height>
+				<texture>$INFO[Window.Property(sprites_dir)]dog/jump/1.png</texture>
+				<fadetime>0</fadetime>
+				<visible>!IsEmpty(Container(50).Property(gamestarted))</visible>
+				<animation type="Visible">
+					<effect type="slide" start="0,0" end="0,0" time="1050" />
+					<effect type="fade" start="100" end="0" time="0" delay="1050" />
+				</animation>
+			</control>
+		</control>
+
+		<control type="panel" id="50">
+			<description>birds Container (max=12)</description>
+			<posx>40</posx>
+			<posy>60r</posy>
+			<width>480</width>
+			<height>40</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<hitrect x="1" y="1" w="0" h="0" />
+			<itemlayout height="40" width="40">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<animation effect="rotatex" center="20,0" start="0" end="-360" time="2000" loop="true" condition="!IsEmpty(Container(50).Property(ongamec)) + SubString(ListItem.Label2,1)">Conditional</animation>
+				</control>
+			</itemlayout>
+			<focusedlayout height="40" width="40">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<animation effect="rotatex" center="20,0" start="0" end="-360" time="2000" loop="true" condition="!IsEmpty(Container(50).Property(ongamec)) + SubString(ListItem.Label2,1)">Conditional</animation>
+				</control>
+			</focusedlayout>
+		</control>
+
+		<control type="fixedlist" id="150">
+			<description>Cartridge Container (30 max)</description>
+			<posx>600</posx>
+			<posy>70r</posy>
+			<width>660</width>
+			<height>50</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<scrolltime>200</scrolltime>
+			<focusposition>30</focusposition>
+			<orientation>horizontal</orientation>
+			<hitrect x="1" y="1" w="0" h="0" />
+			<itemlayout height="50" width="22">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>22</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>balle.png</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="22">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>22</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>balle.png</texture>
+				</control>
+				<control type="label">
+					<posx>11</posx>
+					<posy>10</posy>
+					<width>22</width>
+					<height>40</height>
+					<label>[B]$INFO[ListItem.Label2][/B]</label>
+					<font>font12</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>black</textcolor>
+					<shadowcolor>FFEB9E17</shadowcolor>
+				</control>
+			</focusedlayout>
+		</control>
+
+		<control type="group" id="2000">
+			<description>On Game C - Clay Shooting</description>
+			<visible>IsEmpty(Container(50).Property(paused)) + !IsEmpty(Container(50).Property(ongamec))</visible>
+			<enable>!SubString(Control.GetLabel(2001),*)</enable>
+			<posx>592</posx>
+			<posy>720</posy>
+			<control type="label">
+				<description>skeet pts label</description>
+				<posx>-2</posx>
+				<posy>96</posy>
+				<width>100</width>
+				<height>30</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(skeet_pts),[B]+,[/B]]</label>
+				<animation effect="slide" start="0,0" end="0,-1280" time="6000" reversible="false" condition="!IsEmpty(Container(50).Property(skeet_pts))">Conditional</animation>
+				<animation effect="slide" start="0,0" end="50,0" time="500" reversible="false" pulse="true" condition="!IsEmpty(Container(50).Property(skeet_pts))">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="3000" delay="2000" reversible="false" condition="!IsEmpty(Container(50).Property(skeet_pts))">Conditional</animation>
+			</control>
+			<control type="image">
+				<description>skeet image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>96</width>
+				<height>96</height>
+				<texture>special://xbmc/media/icon.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" center="auto" start="0" end="-36000" time="1000" tween="elastic" pulse="true" condition="!SubString(Control.GetLabel(2001),*)">Conditional</animation>
+				<animation effect="rotatex" center="48,0" start="0" end="-360" time="1000" loop="true" condition="!IsEmpty(Container(50).Property(ongamec)) + SubString(Control.GetLabel(2001),*)">Conditional</animation>
+			</control>
+			<control type="radiobutton" id="2001">
+				<description>skeet pulled</description>
+				<hitrect x="18" y="18" w="60" h="60" />
+				<posx>18</posx>
+				<posy>18</posy>
+				<width>60</width>
+				<height>60</height>
+				<label>-</label>
+				<font>-</font>
+				<textureradiofocus>-</textureradiofocus>
+				<textureradionofocus>-</textureradionofocus>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>target.png</texturefocus>
+				<onclick condition="IsEmpty(Container(50).Property(paused)) + IntegerGreaterThan(Container(150).ListItem.Label,1)">control.move(150,-1)</onclick>
+				<onclick>SetFocus(299)</onclick>
+				<enable>IntegerGreaterThan(Container(150).ListItem.Label,1)</enable>
+			</control>
+		</control>
+
+		<control type="group">
+			<posx>540</posx>
+			<posy>310</posy>
+			<control type="label">
+				<description>perfect label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font28_title</font>
+				<textcolor>red</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(perfect),+,[CR]PERFECT!]</label>
+				<animation type="Conditional" condition="!IsEmpty(Container(50).Property(perfect))" reversible="false" >
+					<effect type="zoom" center="auto" start="200" end="100" time="2500" />
+					<effect type="slide" start="0,0" end="-570,-305" time="1000" delay="2000" />
+					<effect type="fade" start="100" end="0" time="1000" delay="3000" />
+				</animation>
+			</control>
+			<control type="label">
+				<description>bonus label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font28_title</font>
+				<textcolor>red</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(bonus),+,[CR]BONUS!]</label>
+				<animation type="Conditional" condition="!IsEmpty(Container(50).Property(bonus))" reversible="false" >
+					<effect type="zoom" center="auto" start="200" end="100" time="2500" />
+					<effect type="slide" start="0,0" end="-570,-305" time="1000" delay="2000" />
+					<effect type="fade" start="100" end="0" time="1000" delay="3000" />
+				</animation>
+			</control>
+			<control type="label">
+				<description>Level up label</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>red</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Container(50).Property(levelup),Lv.,[CR]READY!]</label>
+				<animation type="Conditional" condition="!IsEmpty(Container(50).Property(levelup))" reversible="false">
+					<effect type="zoom" center="auto" start="200" end="100" time="2500" delay="2000" />
+					<effect type="slide" start="0,0" end="-605,-286" time="1000" delay="4000" />
+					<effect type="fade" start="100" end="0" time="1000" delay="5000" />
+				</animation>
+			</control>
+		</control>
+
+		<control type="label">
+			<description>Game Over label</description>
+			<posx>320</posx>
+			<posy>335</posy>
+			<width>640</width>
+			<height>50</height>
+			<font>font_MainMenu</font>
+			<textcolor>FFEB9E17</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>[UPPERCASE][B]Game Over[/B][/UPPERCASE]</label>
+			<animation effect="zoom" center="auto" start="100" end="200" time="800" condition="!IsEmpty(Container(50).Property(gameover))">Conditional</animation>
+			<visible>!IsEmpty(Container(50).Property(gameover))</visible>
+		</control>
+		<control type="image">
+			<description>Pause image</description>
+			<posx>440</posx>
+			<posy>290</posy>
+			<width>400</width>
+			<height>140</height>
+			<aspectratio>keep</aspectratio>
+			<texture>paused.png</texture>
+			<visible>!IsEmpty(Container(50).Property(paused))</visible>
+			<animation effect="slide" start="0,0" end="0,-290" time="1000" condition="!IsEmpty(Container(50).Property(paused))">Conditional</animation>
+			<animation type="conditional" condition="!IsEmpty(Container(50).Property(paused))" pulse="true" reversible="false">
+				<effect type="slide" start="0,0" end="0,580" time="2000" delay="1000" tween="bounce" easing="out" />
+				<effect type="slide" start="0,0" end="440,-290" time="2000" delay="3000" tween="bounce" easing="out" />
+				<effect type="slide" start="0,0" end="-440,-290" time="2000" delay="5000" tween="bounce" easing="out" />
+				<effect type="slide" start="0,0" end="-440,290" time="2000" delay="7000" tween="bounce" easing="out" />
+				<effect type="slide" start="0,0" end="440,290" time="2000" delay="9000" tween="bounce" easing="out" />
+			</animation>
+		</control>
+
+		<control type="group" id="1000">
+			<control type="image">
+				<posx>-11</posx>
+				<posy>550</posy>
+				<width>22</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture>balle.png</texture>
+				<animation type="conditional" condition="!IsEmpty(Container(50).Property(fire))" reversible="false">
+					<effect type="slide" start="0,0" end="0,-600" time="300" tween="quadratic" easing="out" />
+					<effect type="zoom" center="auto" start="100" end="10" time="300" tween="quadratic" easing="in" />
+				</animation>
+			</control>
+			<control type="group">
+				<visible>Window.IsActive(Pointer.xml)</visible>
+				<control type="image">
+					<description>target Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<texture>target.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="slide" end="-24,-24" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="360" time="20000" loop="true" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>target Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<texture>target.png</texture>
+					<colordiffuse>black</colordiffuse>
+					<visible>!IntegerGreaterThan(Container(50).Property(score),59999)</visible>
+					<animation effect="fade" time="300">Visible</animation>
+					<animation effect="fade" time="300">Hidden</animation>
+					<animation effect="slide" end="-25,-25" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-360" time="20000" loop="true" condition="true">Conditional</animation>
+					<animation type="conditional" condition="true" loop="true">
+						<effect type="zoom" center="auto" start="100" end="125" time="2000" />
+						<effect type="zoom" center="auto" start="100" end="75" time="2000" delay="2000" />
+					</animation>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

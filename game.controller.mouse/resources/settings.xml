@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <!-- General -->
+  <category label="$LOCALIZE[128]">
+    <setting type="lsep" label="$LOCALIZE[35074]" />
+    <setting label="30001" type="select" id="a" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="1" />
+    <setting label="30002" type="select" id="b" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="3" />
+    <setting label="30003" type="select" id="x" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="6" />
+    <setting label="30004" type="select" id="y" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="4" />
+    
+    <setting label="30005" type="select" id="start" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="10" />
+    <setting label="30006" type="select" id="back" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="8" />
+    <setting label="30007" type="text" id="guide0" default="$ADDON[game.controller.mouse 30070]" enable="false" />
+    
+    <setting label="30010" type="text" id="up" default="$ADDON[game.controller.mouse 30062]" enable="false" />
+    <setting label="30012" type="text" id="right" default="$ADDON[game.controller.mouse 30063]" enable="false" />
+    <setting label="30011" type="text" id="down" default="$ADDON[game.controller.mouse 30064]" enable="false" />
+    <setting label="30013" type="text" id="left" default="$ADDON[game.controller.mouse 30065]" enable="false" />
+    
+    <setting label="30008" type="select" id="leftthumb" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="0" />
+    <setting label="30009" type="select" id="rightthumb" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="2" />
+
+    <setting type="lsep" label="$LOCALIZE[35075]" />
+    <setting label="30014" type="select" id="leftbumper" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="0" />
+    <setting label="30015" type="select" id="rightbumper" lvalues="30050|30051|30052|30053|30054|30055|30056|30057|30058|30059|30060|30061" default="2" />
+
+    <setting type="lsep" label="$LOCALIZE[35076]" />
+    <setting label="30018" type="slider" id="lefttrigger" range="1,0.5,10" option="float" default="1.5" />
+    <setting label="30019" type="slider" id="righttrigger" range="1,0.5,10" option="float" default="1.5" />
+
+    <setting type="lsep" label="$LOCALIZE[35077]" />
+    <setting label="30020" type="bool" id="leftstick" default="true" />
+    <setting label="30021" type="bool" id="rightstick" default="true" />
+    
+    <setting type="lsep" label="30073" />
+    <setting label="30074" type="slider" id="leftmotor" range="0,100" option="percent" default="75" />
+    <setting label="30075" type="slider" id="rightmotor" range="0,100" option="percent" default="75" />
+  </category>
+
+  <category label="30070">
+    <setting type="lsep" label="30071" />
+    <setting label="30007" type="text" id="guide" default="" />
+    <setting label="Action of" type="enum" id="guide_type" values="Kodi|Windows" default="0" visible="!eq(-1,)" subsetting="true" />
+
+    <setting type="lsep" label="30072" />
+    <setting label="X1" type="text" id="x1" default="" />
+    <setting label="Action of" type="enum" id="x1_type" values="Kodi|Windows" default="0" visible="!eq(-1,)" subsetting="true" />
+    <setting label="X2" type="text" id="x2" default="" />
+    <setting label="Action of" type="enum" id="x2_type" values="Kodi|Windows" default="0" visible="!eq(-1,)" subsetting="true" />
+    
+    <setting type="lsep" label="Tips" />
+    <setting type="text" id="t1" enable="false" label="Use 'Ctrl+C' and 'Ctrl+V' for edit your action." />
+    <setting type="text" id="t2" enable="false" label="Possible action: Windows executable" />
+    <setting type="text" id="t3" enable="false" label="Or Kodi built-in -> http://kodi.wiki/view/List_of_Built_In_Functions" />
+  </category>
+</settings>

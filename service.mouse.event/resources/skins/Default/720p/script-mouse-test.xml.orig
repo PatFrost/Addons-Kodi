@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>-</defaultcontrol>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<onload>SetProperty(current.color,FFFFFFFF)</onload>
+	<controls>
+		<control type="image">
+			<description>bg image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black-back.png</texture>
+		</control>
+		<control type="image">
+			<description>current color image</description>
+			<left>10</left>
+			<top>50</top>
+			<width>58</width>
+			<height>58</height>
+			<texture colordiffuse="$INFO[Window.Property(current.color)]">../../media/picker-white.png</texture>
+			<bordertexture border="8">button-nofocus.png</bordertexture>
+			<bordersize>4</bordersize>
+		</control>
+		<control type="group">
+			<depth>0.08</depth>
+			<control type="image">
+				<description>Section header bg image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>42</height>
+				<texture>black-back.png</texture>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>20</left>
+				<top>3</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>../../media/mouse-icon_games.png</texture>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="image">
+				<description>Section header image</description>
+				<left>20</left>
+				<top>3</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_events.png</texture>
+				<visible>Window.IsActive(Pointer.xml)</visible>
+			</control>
+			<control type="grouplist">
+				<left>65</left>
+				<top>5</top>
+				<width>1000</width>
+				<height>30</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="0" max="800">auto</width>
+					<height>30</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[system.addontitle(service.mouse.event)][COLOR=blue] - [/COLOR](x:$INFO[Window(home).Property(MousePosX)], y:$INFO[Window(home).Property(MousePosY)])</label>
+					<visible>Window.IsActive(Pointer.xml)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="0" max="800">auto</width>
+					<height>30</height>
+					<font>font14</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Joystick[COLOR=blue] - [/COLOR](x:$INFO[Window.Property(JoyPosX)], y:$INFO[Window.Property(JoyPosY)])</label>
+					<visible>!Window.IsActive(Pointer.xml)</visible>
+				</control>
+			</control>
+		</control>
+		<control type="button">
+			<description>Close Window button</description>
+			<left>84r</left>
+			<top>0</top>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PreviousMenu</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<visible>system.getbool(input.enablemouse)</visible>
+		</control>
+		<control type="group" id="10">
+			<depth>0.08</depth>
+			<left>20</left>
+			<top>55r</top>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<control type="button" id="21">
+				<description>undo push button</description>
+				<left>0</left>
+				<top>0</top>
+				<width>45</width>
+				<height>45</height>
+				<label>undo</label>
+				<font>-</font>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>20</onleft>
+				<onright>20</onright>
+				<onup>9002</onup>
+				<ondown>9003</ondown>
+			</control>
+			<control type="image">
+				<description>undo back Icon</description>
+				<left>5</left>
+				<top>5</top>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_back.png</texture>
+			</control>
+		</control>
+		<control type="group" id="2000">
+			<description>Joystick Pointer Image</description>
+			<left>640</left>
+			<top>360</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>32</width>
+				<height>32</height>
+				<texture>pointer-focus-drag.png</texture>
+				<animation effect="rotatey" center="0,0" end="180" time="100" condition="Integer.IsGreater(Window.Property(JoyPosX),1250)">conditional</animation>
+				<animation effect="rotatex" center="0,0" end="180" time="100" condition="Integer.IsGreater(Window.Property(JoyPosY),690)">conditional</animation>
+				<visible>!Window.IsActive(Pointer.xml)</visible>
+			</control>
+		</control>
+<!-- 
+		<control type="image">
+			<description>TEST</description>
+			<left>5</left>
+			<top>5</top>
+			<width>10</width>
+			<height>10</height>
+			<texture>../media/picker-white.png</texture>
+			<animation effect="rotate" end="-29.0546040991" center="auto" time="0" condition="true">conditional</animation>
+			<animation effect="zoom" end="5,5,731,10" time="3000" tween="quadratic" >WindowOpen</animation>
+			<visible>false</visible>
+		</control> -->
+	</controls>
+</window>

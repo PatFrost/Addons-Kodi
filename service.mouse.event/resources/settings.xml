@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="Testing">
+    <setting type="lsep" label="[COLOR=red]Warning![/COLOR]" />
+    <setting type="lsep" label="Possibility high CPU usage." />
+    <setting type="lsep" label="Due of drawing controls in window, depend of user." />
+    <setting type="action" label="Run Test..." action="RunScript($CWD/test.py)" option="close" default="" />
+  </category>
+  <!-- General -->
+  <category label="$LOCALIZE[14092]">
+    <setting type="lsep" label="$LOCALIZE[24000]" />
+    <setting id="debug" type="bool" label="$LOCALIZE[20191]" default="false" />
+    <setting type="lsep" label="$LOCALIZE[166]" />
+    <setting type="action" label="Enable/Disable skin debug infos" action="Skin.ToggleDebug" default="" />
+    <setting type="action" label="$LOCALIZE[20183]" action="ReloadSkin(reload)" default="" />
+    <setting type="lsep" label="$LOCALIZE[13000]" />
+    <setting type="action" label="Enable/Disable system debug logging" action="ToggleDebug" default="" />
+  </category>
+</settings>

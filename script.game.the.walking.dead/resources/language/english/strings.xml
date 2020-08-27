@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <!-- strings 32000 thru 32999 reserved for scripts -->
+  <string id="32000">The Walking Dead</string>
+
+  <string id="32100">Left Menu</string>
+  <string id="32101">Walking help</string>
+  <string id="32102">This tab signifies that there is a menu off to the side of this window that contains extra options for this game.  To access the menu, press button "Context Menu" of XBMC with your remote control or keyboard (c letter) or place your mouse pointer over the tab. [CR][CR]Click "Ok" to close this dialog. It will not appear again.</string>
+  
+  <string id="32110">Right Menu</string>
+  <string id="32111">Game help</string>
+  <string id="32112">-</string>
+  
+  <string id="32120">Weapons Menu</string>
+  <string id="32121">Weapons help</string>
+  <string id="32122">-</string>
+</strings>

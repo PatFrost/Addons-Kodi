@@ -1,0 +1,79 @@
+[
+  {
+    "articlename": "Rick Grimes (Comic Series)", 
+    "image": "Updated Rick Face2.png", 
+    "name": "Rick", 
+    "imgurl": "http://images3.wikia.nocookie.net/__cb20121021101042/walkingdead/images/thumb/2/22/Updated_Rick_Face2.png/117px-Updated_Rick_Face2.png", 
+    "statut": "Alive"
+  }, 
+  {
+    "articlename": "Morgan Jones (Comic Series)", 
+    "image": "More.png", 
+    "name": "Morgan", 
+    "imgurl": "http://images1.wikia.nocookie.net/__cb20120625210024/walkingdead/images/thumb/7/70/More.png/116px-More.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Glenn (Comic Series)", 
+    "image": "Glennbetter.png", 
+    "name": "Glenn", 
+    "imgurl": "http://images2.wikia.nocookie.net/__cb20120702200735/walkingdead/images/thumb/d/d8/Glennbetter.png/117px-Glennbetter.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Andrea (Comic Series)", 
+    "image": "Annn.png", 
+    "name": "Andrea", 
+    "imgurl": "http://images1.wikia.nocookie.net/__cb20120625202616/walkingdead/images/thumb/4/48/Annn.png/116px-Annn.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Carl Grimes (Comic Series)", 
+    "image": "BanCarlcs.png", 
+    "name": "Carl", 
+    "imgurl": "http://images1.wikia.nocookie.net/__cb20120926180204/walkingdead/images/thumb/4/4f/BanCarlcs.png/116px-BanCarlcs.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Lori Grimes (Comic Series)", 
+    "image": "Lor.png", 
+    "name": "Lori", 
+    "imgurl": "http://images2.wikia.nocookie.net/__cb20120505110816/walkingdead/images/thumb/8/8a/Lor.png/117px-Lor.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Shane (Comic Series)", 
+    "image": "ShaneComic.png", 
+    "name": "Shane", 
+    "imgurl": "http://images3.wikia.nocookie.net/__cb20121020202128/walkingdead/images/thumb/c/c1/ShaneComic.png/117px-ShaneComic.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Dale (Comic Series)", 
+    "image": "Dale.jpg", 
+    "name": "Dale", 
+    "imgurl": "http://images4.wikia.nocookie.net/__cb20120808184119/walkingdead/images/thumb/9/9f/Dale.jpg/116px-Dale.jpg", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Carol (Comic Series)", 
+    "image": "Carol.jpg", 
+    "name": "Carol", 
+    "imgurl": "http://images4.wikia.nocookie.net/__cb20120808184348/walkingdead/images/thumb/d/df/Carol.jpg/116px-Carol.jpg", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Maggie Greene (Comic Series)", 
+    "image": "Magg.png", 
+    "name": "Maggie", 
+    "imgurl": "http://images2.wikia.nocookie.net/__cb20120624203647/walkingdead/images/thumb/f/f2/Magg.png/117px-Magg.png", 
+    "statut": "Unknown"
+  }, 
+  {
+    "articlename": "Hershel Greene (Comic Series)", 
+    "image": "Hershel Greene.jpg", 
+    "name": "Hershel", 
+    "imgurl": "http://images4.wikia.nocookie.net/__cb20100314150416/walkingdead/images/thumb/0/04/Hershel_Greene.jpg/116px-Hershel_Greene.jpg", 
+    "statut": "Unknown"
+  }
+]

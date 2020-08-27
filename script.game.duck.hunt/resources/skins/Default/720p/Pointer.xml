@@ -1,0 +1,46 @@
+<window id="105">
+	<defaultcontrol>-</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="image" id="1">
+			<description>Pointer Image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>32</width>
+			<height>32</height>
+			<texture fallback="pointer-nofocus.png">$INFO[skin.string(addon-pointer)]</texture>
+            <animation effect="slide" end="-16,-16" condition="Skin.HasSetting(addon-pointer-centered)">Conditional</animation>
+		</control>
+		<control type="image" id="2">
+			<description>Pointer Focus Image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>32</width>
+			<height>32</height>
+			<texture fallback="pointer-focus.png">$INFO[skin.string(addon-pointer)]</texture>
+            <animation effect="slide" end="-16,-16" condition="Skin.HasSetting(addon-pointer-centered)">Conditional</animation>
+		</control>
+		<control type="image" id="3">
+			<description>Pointer Drag Image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>32</width>
+			<height>32</height>
+			<texture fallback="pointer-focus-drag.png">$INFO[skin.string(addon-pointer)]</texture>
+            <animation effect="slide" end="-16,-16" condition="Skin.HasSetting(addon-pointer-centered)">Conditional</animation>
+		</control>
+		<control type="image" id="4">
+			<description>Pointer Click Image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>32</width>
+			<height>32</height>
+			<texture fallback="pointer-focus-click.png">$INFO[skin.string(addon-pointer)]</texture>
+            <animation effect="slide" end="-16,-16" condition="Skin.HasSetting(addon-pointer-centered)">Conditional</animation>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="$LOCALIZE[128]">
+    <setting id="playsfx" type="bool" label="Play Sounds FX" default="true" />
+    <setting id="FirstTimeRun" type="bool" label="First Time Run" default="false" visible="false" />
+  </category>
+
+  <category label="$LOCALIZE[15016]">
+    <setting id="g1" label="Game 1 - $LOCALIZE[20359] 1 - $LOCALIZE[21396]" type="text" default="1" enable="false" />
+    <setting id="s1" label="-" type="text" default="" visible="false" />
+    <setting id="g2" label="Game 2 - $LOCALIZE[20359] 1 - $LOCALIZE[21396]" type="text" default="1" enable="false" />
+    <setting id="s2" label="-" type="text" default="" visible="false" />
+    <setting id="g3" label="Game 3 - $LOCALIZE[20359] 1 - $LOCALIZE[21396]" type="text" default="1" enable="false" />
+    <setting id="s3" label="-" type="text" default="" visible="false" />
+    <setting id="g4" label="Game 4 - $LOCALIZE[20359] 1 - $LOCALIZE[21396]" type="text" default="1" enable="false" />
+    <setting id="s4" label="-" type="text" default="" visible="false" />
+    <setting id="g5" label="Game 5 - $LOCALIZE[20359] 1 - $LOCALIZE[21396]" type="text" default="1" enable="false" />
+    <setting id="s5" label="-" type="text" default="" visible="false" />
+  </category>
+
+  <category label="Tools">
+    <setting type="action" label="Translate from English to $INFO[System.Language]" option="close" action="RunScript(script.xbmc.translator,$ID)" default="" />
+  </category>
+</settings>

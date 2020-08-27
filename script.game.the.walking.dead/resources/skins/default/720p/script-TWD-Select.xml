@@ -1,0 +1,228 @@
+<window type="dialog">
+	<defaultcontrol always="true">6</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<controls>
+		<control type="group" id="6">
+			<left>330</left>
+			<top>0</top>
+			<animation effect="fade" time="300">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+			<control type="image">
+				<description>Game Background</description>
+				<left>-5</left>
+				<top>0</top>
+				<width>630</width>
+				<height>720</height>
+				<texture border="40">TWD-DialogBack.png</texture>
+			</control>
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>40</left>
+				<top>6</top>
+				<width>540</width>
+				<height>40</height>
+				<texture>TWD-dialogheader.png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>header label</description>
+				<left>40</left>
+				<top>12</top>
+				<width>540</width>
+				<height>30</height>
+				<font>font13_title</font>
+				<label>Episode 1 - Chapters</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>FFF30000</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="group">
+				<left>0</left>
+				<top>-15</top>
+				<control type="list" id="50">
+					<description>button menu</description>
+					<animation effect="slide" start="0,0" end="177,0" time="0" condition="!IntegerGreaterThan(Container(50).NumItems,2)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="88.5,0" time="0" condition="!IntegerGreaterThan(Container(50).NumItems,3)">Conditional</animation>
+					<left>45</left>
+					<top>70</top>
+					<width>532</width>
+					<height>40</height>
+					<orientation>horizontal</orientation>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<pagecontrol>-</pagecontrol>
+					<itemlayout height="40" width="177">
+						<control type="image">
+							<left>2</left>
+							<top>0</top>
+							<width>173</width>
+							<height>40</height>
+							<texture border="5">TWD-button-nofocus.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>173</width>
+							<height>40</height>
+							<font>font12_title</font>
+							<textcolor>FF505050</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="40" width="177">
+						<control type="image">
+							<left>2</left>
+							<top>0</top>
+							<width>173</width>
+							<height>40</height>
+							<texture border="5">TWD-button-focus.png</texture>
+							<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(50)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>173</width>
+							<height>40</height>
+							<font>font12_title</font>
+							<textcolor>FF999999</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(50)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<width>173</width>
+							<height>40</height>
+							<font>font12_title</font>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(50)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<description>Has Previous</description>
+					<left>20</left>
+					<top>80</top>
+					<width>20</width>
+					<height>20</height>
+					<texture>TWD-scroll-left-focus.png</texture>
+					<visible>Container(50).HasPrevious</visible>
+				</control>
+				<control type="image">
+					<description>Has Next</description>
+					<left>580</left>
+					<top>80</top>
+					<width>20</width>
+					<height>20</height>
+					<texture>TWD-scroll-right-focus.png</texture>
+					<visible>Container(50).HasNext</visible>
+				</control>
+			</control>
+			<control type="panel" id="150">
+				<description>game panel</description>
+				<enable>false</enable>
+				<left>10</left>
+				<top>105</top>
+				<width>600</width>
+				<height>600</height>
+				<scrolltime>0</scrolltime>
+				<itemgap>0</itemgap>
+				<onup>150</onup>
+				<ondown>150</ondown>
+				<onleft>150</onleft>
+				<onright>150</onright>
+				<itemlayout height="60" width="60">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<texture border="5">TWD-button-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<description>debug label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<font>font10</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>FFb4b4b4</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>false</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60" width="60">
+					<control type="image">
+						<description>focus</description>
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<texture border="5">TWD-folder-focus.png</texture>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<description>debug label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<font>font10</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>false</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<description>chapter locked</description>
+				<left>182</left>
+				<top>105</top>
+				<width>256</width>
+				<height>600</height>
+				<texture>padlock.png</texture>
+				<aspectratio>keep</aspectratio>
+				<colordiffuse>FF999999</colordiffuse>
+				<visible>!IsEmpty(Container(50).ListItem.Property(locked))</visible>
+				<animation effect="fade" time="300">Visible</animation>
+				<animation effect="fade" time="300">Hidden</animation>
+			</control>
+		</control>
+	</controls>
+</window>

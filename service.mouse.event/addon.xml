@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="service.mouse.event" name="Mouse Event"
+       version="1.0.0" provider-name="Frost (media-passion.fr)">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0"/>
+    <import addon="script.module.mouse" version="1.0.0"/>
+  </requires>
+  <extension point="xbmc.service" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <nochangelog>true</nochangelog>
+    <summary>Mouse Event</summary>
+    <description>Mouse Event</description>
+  </extension>
+</addon>

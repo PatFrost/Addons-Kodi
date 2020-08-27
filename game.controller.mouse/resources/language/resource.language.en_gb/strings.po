@@ -1,0 +1,255 @@
+# XBMC Media Center language file
+# Addon Name: Joystick Mouse
+# Addon id: game.controller.mouse
+# Addon Provider: N/A
+msgid ""
+msgstr ""
+"Project-Id-Version: Libretro Clients\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2014-05-30 17:00+8\n"
+"PO-Revision-Date: 2014-05-30 17:00+8\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "Kodi"
+msgstr ""
+
+msgctxt "#30001"
+msgid "A"
+msgstr ""
+
+msgctxt "#30002"
+msgid "B"
+msgstr ""
+
+msgctxt "#30003"
+msgid "X"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Y"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Start"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Back"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Guide"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Left Stick"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Right Stick"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Up"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Down"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Right"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Left"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Left Shoulder"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Right Shoulder"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Left Trigger"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Right Trigger"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Left Stick Down"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Left Stick Left"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Left Stick Right"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Left Stick Up"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Right Stick Down"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Right Stick Left"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Right Stick Right"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Right Stick Up"
+msgstr ""
+
+msgctxt "#30026"
+msgid "" 
+msgstr ""
+
+msgctxt "#30027"
+msgid "X2 Chatpad"
+msgstr ""
+
+msgctxt "#30028"
+msgid "X1 Chatpad"
+msgstr ""
+
+
+msgctxt "#30045"
+msgid "Use 'Ctrl+C' and 'Ctrl+V' for edit your action.[CR]Possible action: Windows shell[CR]Or Kodi built-in -> http://kodi.wiki/view/List_of_Built_In_Functions"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Custom Action"
+msgstr ""
+
+msgctxt "#30047"
+msgid "Keyboard Action"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Mouse Action"
+msgstr ""
+
+msgctxt "#30049"
+msgid "Movement [B]↕↔[/B]"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Left button (click) [B]↕[/B]"
+msgstr ""
+
+msgctxt "#30051"
+msgid "Left button (press/release) [B]↓↑[/B]"
+msgstr ""
+
+msgctxt "#30052"
+msgid "Right button (click) [B]↕[/B]"
+msgstr ""
+
+msgctxt "#30053"
+msgid "Right button (press/release) [B]↓↑[/B]"
+msgstr ""
+
+msgctxt "#30054"
+msgid "Middle button (click) [B]↕[/B]"
+msgstr ""
+
+msgctxt "#30055"
+msgid "Middle button (press/release) [B]↓↑[/B]"
+msgstr ""
+
+msgctxt "#30056"
+msgid "Scroll Up [B]↑[/B]"
+msgstr ""
+
+msgctxt "#30057"
+msgid "Scroll Down [B]↓[/B]"
+msgstr ""
+
+msgctxt "#30058"
+msgid "X button (click) [B]↕[/B]"
+msgstr ""
+
+msgctxt "#30059"
+msgid "X button (press/release) [B]↓↑[/B]"
+msgstr ""
+
+msgctxt "#30060"
+msgid "Keyboard Windows (logo)"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Keyboard Applications (menu)"
+msgstr ""
+
+msgctxt "#30062"
+msgid "Keyboard Up arrow"
+msgstr ""
+
+msgctxt "#30063"
+msgid "Keyboard Right arrow"
+msgstr ""
+
+msgctxt "#30064"
+msgid "Keyboard Down arrow"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Keyboard Left arrow"
+msgstr ""
+
+msgctxt "#30070"
+msgid "Shortcuts"
+msgstr ""
+
+msgctxt "#30071"
+msgid "Gamepad"
+msgstr ""
+
+msgctxt "#30072"
+msgid "Chatpad"
+msgstr ""
+
+msgctxt "#30073"
+msgid "Vibration"
+msgstr ""
+
+msgctxt "#30074"
+msgid "Left Motor"
+msgstr ""
+
+msgctxt "#30075"
+msgid "Right Motor"
+msgstr ""
+
+
+msgctxt "#30099"
+msgid "Select joystick"
+msgstr ""
+
+msgctxt "#30100"
+msgid "No Joystick found!"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Make sure your device is connected and compatible with XInput."
+msgstr ""

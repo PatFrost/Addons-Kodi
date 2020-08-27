@@ -1,0 +1,136 @@
+<window type="dialog">
+	<defaultcontrol always="true">6</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group" id="6">
+			<left>280</left>
+			<top>0</top>
+			<animation effect="fade" time="300">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+			<control type="image">
+				<description>Game Background</description>
+				<left>0</left>
+				<top>0</top>
+				<width>720</width>
+				<height>720</height>
+				<texture border="15">TWD-ContentPanel.png</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<width>700</width>
+				<height>700</height>
+				<texture>-</texture>
+				<colordiffuse>FF999999</colordiffuse>
+			</control>
+			<control type="panel" id="150">
+				<description>game panel</description>
+				<left>10</left>
+				<top>10</top>
+				<width>700</width>
+				<height>700</height>
+				<scrolltime>0</scrolltime>
+				<itemgap>0</itemgap>
+				<onup>150</onup>
+				<ondown>150</ondown>
+				<onleft>150</onleft>
+				<onright>150</onright>
+				<itemlayout height="70" width="70">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture border="5">TWD-button-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<description>critical zone label</description>
+						<left>35</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font28_title</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]•[/B]</label>
+						<textcolor>red</textcolor>
+						<visible>SubString(Control.GetLabel(41),*) + !IsEmpty(ListItem.Property(criticalzone))</visible>
+						<animation effect="fade" time="250">Visible</animation>
+						<animation effect="fade" time="100">Hidden</animation>
+					</control>
+					<control type="label">
+						<description>safe zone label</description>
+						<left>35</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font28_title</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]•[/B]</label>
+						<textcolor>green</textcolor>
+						<visible>SubString(Control.GetLabel(41),*) + !IsEmpty(ListItem.Property(safezone))</visible>
+						<animation effect="fade" time="250">Visible</animation>
+						<animation effect="fade" time="100">Hidden</animation>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<description>debug label</description>
+						<left>35</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font10</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>FFb4b4b4</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>true</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="70">
+					<control type="image">
+						<description>focus</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture border="5">TWD-folder-focus.png</texture>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<description>debug label</description>
+						<left>35</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font10</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>true</visible>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

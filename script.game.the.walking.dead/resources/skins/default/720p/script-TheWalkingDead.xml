@@ -1,0 +1,1441 @@
+﻿<window>
+	<defaultcontrol always="true">7000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(weapon_direction,onleft)</onload>
+	<onload condition="System.HasAlarm(weapon_fire)">CancelAlarm(weapon_fire,true)</onload>
+	<onunload condition="System.HasAlarm(weapon_fire)">CancelAlarm(weapon_fire,true)</onunload>
+	<onunload>ClearProperty(weapon_direction)</onunload>
+	<onunload>ClearProperty(weapon_fire)</onunload>
+	<controls>
+		<control type="image">
+			<description>Background Image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>scale</aspectratio>
+			<texture background="true" fallback="http://thetvdb.com/banners/fanart/original/153021-36.jpg">$INFO[window.property(fanart)]</texture>
+			<visible>!Control.IsVisible(666)</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+		</control>
+		<control type="visualisation" id="666">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<!--<visible>Player.HasAudio + System.IdleTime(30)</visible>-->
+			<visible>false</visible>
+		</control>
+		<control type="group">
+			<description>Floor Walkers Images</description>
+			<animation effect="slide" start="0,180" end="0,0" time="1000" tween="quadratic" easing="in" condition="true">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,180" time="1000" tween="quadratic" easing="in" condition="true">WindowClose</animation>
+			<left>0</left>
+			<top>180r</top>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>640</width>
+				<height>180</height>
+				<texture>walkers.png</texture>
+				<colordiffuse>FFA52A2A</colordiffuse>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="image">
+				<left>638</left>
+				<top>0</top>
+				<width>644</width>
+				<height>180</height>
+				<texture>walkers.png</texture>
+				<colordiffuse>FFA52A2A</colordiffuse>
+				<aspectratio>scale</aspectratio>
+			</control>
+		</control>
+		<control type="image">
+			<description>Floor Image</description>
+			<left>0</left>
+			<top>50r</top>
+			<width>1280</width>
+			<height>50</height>
+			<texture>TWD-floor.png</texture>
+			<colordiffuse>red</colordiffuse>
+		</control>
+
+		<control type="image">
+			<description>Section header image</description>
+			<left>20</left>
+			<top>3</top>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>TWD-icon_addons.png</texture>
+		</control>
+		<control type="grouplist">
+			<left>65</left>
+			<top>5</top>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<width min="0" max="800">auto</width>
+				<height>30</height>
+				<font>font14</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>33065</label>
+				<visible>Window.IsVisible(script-TWD-Editor.xml)</visible>
+			</control>
+			<control type="label">
+				<width min="0" max="800">auto</width>
+				<height>30</height>
+				<font>font14</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[System.AddonTitle(script.game.the.walking.dead)]</label>
+				<visible>!Window.IsVisible(script-TWD-Editor.xml) + IsEmpty(Window.Property(chapter))</visible>
+			</control>
+			<control type="label">
+				<width min="0" max="800">auto</width>
+				<height>30</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[20359] 1 - $LOCALIZE[21396] $INFO[Window.Property(chapter)]</label>
+				<visible>!Window.IsVisible(script-TWD-Editor.xml) + !IsEmpty(Window.Property(chapter))</visible>
+			</control>
+		</control>
+
+		<control type="group">
+			<top>50r</top>
+			<visible>![Control.IsVisible(666) | Window.IsVisible(script-TWD-Editor.xml)]</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+			<control type="togglebutton" id="202">
+				<left>50</left>
+				<top>0</top>
+				<width>50</width>
+				<height>50</height>
+				<label>-</label>
+				<altlabel>208</altlabel>
+				<font>-</font>
+				<texturefocus>TWD-OSDStopFO.png</texturefocus>
+				<texturenofocus>TWD-OSDStopNF.png</texturenofocus>
+				<usealttexture>!Player.Playing</usealttexture>
+				<alttexturefocus>TWD-OSDPlayFO.png</alttexturefocus>
+				<alttexturenofocus>TWD-OSDPlayNF.png</alttexturenofocus>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<visible>false</visible>
+			</control>
+			<control type="label">
+				<description>In Game Info</description>
+				<left>300r</left>
+				<top>0</top>
+				<width>250</width>
+				<height>50</height>
+				<font>font13_title</font>
+				<label>Walking ( [COLOR=red]$INFO[window.property(move_count)][/COLOR] • [COLOR=red]$INFO[window.property(move_total)][/COLOR] )</label>
+				<textcolor>FFb4b4b4</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<visible>!IsEmpty(window.property(move_total))</visible>
+				<animation effect="fade" time="250">Visible</animation>
+				<animation effect="fade" time="250">Hidden</animation>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>In Game</description>
+			<left>280</left>
+			<top>0</top>
+			<visible>IntegerGreaterThan(Container(150).NumItems,0) + ![Control.IsVisible(666) | Window.IsVisible(script-TWD-Editor.xml)]</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+			<control type="image">
+				<description>Game Background</description>
+				<left>0</left>
+				<top>0</top>
+				<width>720</width>
+				<height>720</height>
+				<texture border="15">TWD-ContentPanel.png</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="panel" id="150">
+				<description>game panel</description>
+				<left>10</left>
+				<top>10</top>
+				<width>700</width>
+				<height>700</height>
+				<scrolltime>0</scrolltime>
+				<itemgap>0</itemgap>
+				<onup>0</onup>
+				<ondown>0</ondown>
+				<onleft>0</onleft>
+				<onright>0</onright>
+				<itemlayout height="70" width="70">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture border="5">TWD-button-nofocus.png</texture>
+						<visible>SubString(Control.GetLabel(31),*)</visible>
+						<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>
+					</control>
+					<control type="label">
+						<description>critical zone label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font28_title</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]•[/B]</label>
+						<textcolor>red</textcolor>
+						<visible>SubString(Control.GetLabel(41),*) + !IsEmpty(ListItem.Property(criticalzone))</visible>
+						<animation effect="fade" time="250">Visible</animation>
+						<animation effect="fade" time="100">Hidden</animation>
+					</control>
+					<control type="label">
+						<description>safe zone label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font28_title</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]•[/B]</label>
+						<textcolor>green</textcolor>
+						<visible>SubString(Control.GetLabel(41),*) + !IsEmpty(ListItem.Property(safezone))</visible>
+						<animation effect="fade" time="250">Visible</animation>
+						<animation effect="fade" time="100">Hidden</animation>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(people)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(people))</visible>
+					</control>
+					<control type="image">
+						<description>player</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(player)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="image">
+						<description>walker eat</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(sprites_dir)]walker-eat.png</texture>
+						<bordersize>5</bordersize>
+						<aspectratio aligny="top">scale</aspectratio>
+						<visible>SubString(ListItem.Property(walker),2)</visible>
+						<animation effect="fade" time="300">Visible</animation>
+					</control>
+					<control type="image">
+						<description>walker</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(sprites_dir)]walker.png</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>SubString(ListItem.Property(walker),1)</visible>
+						<animation effect="fade" time="300">Visible</animation>
+					</control>
+					<control type="image">
+						<description>food</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(food)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(food))</visible>
+					</control>
+					<control type="image">
+						<description>box</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(box)]</texture>
+						<bordersize>1</bordersize>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>item</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(item)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="image">
+						<description>bullet</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<aspectratio>keep</aspectratio>
+						<texture>balle2.png</texture>
+						<bordersize>5</bordersize>
+						<!--<animation effect="slide" start="0,0" end="-700,0" time="2500" tween="quadratic" easing="out" reversible="false" condition="!IsEmpty(window.property(weapon_fire))">conditional</animation>-->
+						<visible>!SubString(window.property(current_weapon),machete) + IntegerGreaterThan(Container(1150).NumItems,0) + !IsEmpty(window.Property(onfire)) + !IsEmpty(ListItem.Property(onfire))</visible>
+						<!--<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>-->
+						<animation effect="rotate" start="0" end="90" center="35,35" time="0" condition="SubString(window.property(weapon_direction),ondown)">conditional</animation>
+						<animation effect="rotate" start="0" end="-90" center="35,35" time="0" condition="SubString(window.property(weapon_direction),onup)">conditional</animation>
+						<animation effect="rotate" start="0" end="-180" center="35,35" time="0" condition="SubString(window.property(weapon_direction),onright)">conditional</animation>
+						<animation effect="rotatex" start="0" end="-180" center="35,0" time="0" condition="SubString(window.property(weapon_direction),onright) | SubString(window.property(weapon_direction),onup)">conditional</animation>
+					</control>
+					<control type="image">
+						<description>colt Image</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>colt.png</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>5</bordersize>
+						<visible>!SubString(window.property(current_weapon),machete) + IntegerGreaterThan(Container(1150).NumItems,0) + Control.HasFocus(7000) + !IsEmpty(ListItem.Property(player))</visible>
+						<animation effect="fade" time="300">Visible</animation>
+						<!--<animation effect="fade" time="300">Hidden</animation>-->
+						<animation effect="rotate" start="0" end="90" center="35,35" time="400" condition="SubString(window.property(weapon_direction),ondown)">conditional</animation>
+						<animation effect="rotate" start="0" end="-90" center="35,35" time="400" condition="SubString(window.property(weapon_direction),onup)">conditional</animation>
+						<animation effect="rotate" start="0" end="-180" center="35,35" time="400" condition="SubString(window.property(weapon_direction),onright)">conditional</animation>
+						<animation effect="rotatex" start="0" end="-180" center="35,0" time="0" condition="SubString(window.property(weapon_direction),onright) | SubString(window.property(weapon_direction),onup)">conditional</animation>
+					</control>
+					<control type="image">
+						<description>gator-machete Image</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>gator-machete1.png</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>5</bordersize>
+						<visible>SubString(window.property(current_weapon),machete) + Control.HasFocus(7000) + !IsEmpty(ListItem.Property(player))</visible>
+						<animation effect="fade" time="300">Visible</animation>
+						<!--<animation effect="fade" time="300">Hidden</animation>-->
+						<animation effect="rotate" start="0" end="90" center="35,35" time="400" condition="SubString(window.property(weapon_direction),ondown)">conditional</animation>
+						<animation effect="rotate" start="0" end="-90" center="35,35" time="400" condition="SubString(window.property(weapon_direction),onup)">conditional</animation>
+						<animation effect="rotate" start="0" end="-180" center="35,35" time="400" condition="SubString(window.property(weapon_direction),onright)">conditional</animation>
+						<animation effect="rotatex" start="0" end="-180" center="35,0" time="0" condition="SubString(window.property(weapon_direction),onright) | SubString(window.property(weapon_direction),onup)">conditional</animation>
+						<animation effect="slide" start="0,0" end="-70,0" time="500" tween="quadratic" easing="out" reversible="true" condition="!IsEmpty(window.property(onfire))">conditional</animation>
+					</control>
+					<control type="label">
+						<description>debug label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<font>font10</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>false</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="70">
+					<control type="image">
+						<description>focus</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture border="5">TWD-folder-focus.png</texture>
+					</control>
+					<control type="image">
+						<description>people</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(people)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(people))</visible>
+					</control>
+					<control type="image">
+						<description>player</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(player)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="image">
+						<description>walker eat</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(sprites_dir)]walker-eat.png</texture>
+						<bordersize>5</bordersize>
+						<aspectratio aligny="top">scale</aspectratio>
+						<visible>SubString(ListItem.Property(walker),2)</visible>
+					</control>
+					<control type="image">
+						<description>walker</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(sprites_dir)]walker.png</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>SubString(ListItem.Property(walker),1)</visible>
+					</control>
+					<control type="image">
+						<description>food</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(food)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+						<visible>!IsEmpty(ListItem.Property(food))</visible>
+					</control>
+					<control type="image">
+						<description>box</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(box)]</texture>
+						<bordersize>1</bordersize>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>item</description>
+						<left>0</left>
+						<top>0</top>
+						<width>70</width>
+						<height>70</height>
+						<texture>$INFO[ListItem.Property(item)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>Menu On Left</description>
+			<left>-250</left>
+			<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-300,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001)">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="-50,0" time="300" tween="quadratic" easing="out" condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9001)]">WindowClose</animation>
+			<animation effect="slide" start="-50,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+			<visible>!Control.IsVisible(666)</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<control type="button" id="8999">
+				<description>Fake button for mouse control</description>
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>720</height>
+				<label>-</label>
+				<font>-</font>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+				<visible>true</visible>
+			</control>
+			<control type="button" id="9001">
+				<left>250</left>
+				<top>260</top>
+				<width>42</width>
+				<height>128</height>
+				<font>-</font>
+				<texturefocus>TWD-HasSub.png</texturefocus>
+				<texturenofocus>TWD-HasSub.png</texturenofocus>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>260</width>
+				<height>720</height>
+				<texture border="0,0,10,0">TWD-MediaBladeSub.png</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<left>15</left>
+				<top>40</top>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>logo2.png</texture>
+			</control>
+
+			<control type="grouplist" id="9000">
+				<left>0</left>
+				<top>130</top>
+				<width>250</width>
+				<height>600</height>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<control type="label" id="200">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>31006</label>
+					<textcolor>FFF30000</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="group" id="10">
+					<height>40</height>
+					<control type="button" id="11">
+						<description>start button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>235</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Start Walking</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>70</onup>
+						<ondown>30</ondown>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(11)</visible>
+					</control>
+				</control>
+
+				<control type="group" id="30">
+					<height>40</height>
+					<control type="radiobutton" id="31">
+						<description>Show Grid button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>170</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Show Grid</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>10</onup>
+						<ondown>40</ondown>
+						<enable>!IsEmpty(Window.Property(chapter))</enable>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(31)</visible>
+					</control>
+				</control>
+				<control type="group" id="40">
+					<height>40</height>
+					<control type="radiobutton" id="41">
+						<description>Critical Zone button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>170</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>Critical Zone</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>30</onup>
+						<ondown>80</ondown>
+						<enable>!IsEmpty(Window.Property(chapter))</enable>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(41)</visible>
+					</control>
+				</control>
+
+				<control type="label" id="201">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>31026</label>
+					<textcolor>FFF30000</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="group" id="80">
+					<height>40</height>
+					<control type="button" id="81">
+						<description>help button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>235</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>$ADDON[script.game.the.walking.dead 32101]</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>40</onup>
+						<ondown>20</ondown>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(81)</visible>
+					</control>
+				</control>
+
+				<control type="group" id="20">
+					<height>40</height>
+					<control type="button" id="21">
+						<description>settings button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>235</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>5</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>80</onup>
+						<ondown>60</ondown>
+						<onclick>Addon.OpenSettings(script.game.the.walking.dead)</onclick>
+						<enable>true</enable>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(21)</visible>
+					</control>
+				</control>
+
+				<control type="group" id="60">
+					<height>40</height>
+					<control type="button" id="61">
+						<description>Editor button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>235</textwidth>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+						<label>33065</label>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>20</onup>
+						<ondown>70</ondown>
+						<onclick>setfocus(1)</onclick>
+						<enable>false</enable>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(61)</visible>
+					</control>
+				</control>
+
+				<control type="label" id="203">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>21895</label>
+					<textcolor>FFF30000</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="group" id="70">
+					<height>40</height>
+					<control type="togglebutton" id="71">
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<textoffsetx>10</textoffsetx>
+						<textwidth>235</textwidth>
+						<aligny>center</aligny>
+						<label>Stop Tune</label>
+						<altlabel>Play Tune</altlabel>
+						<font>font13</font>
+						<texturefocus>blood.gif</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<usealttexture>!Player.Playing</usealttexture>
+						<alttexturefocus>blood.gif</alttexturefocus>
+						<alttexturenofocus>-</alttexturenofocus>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<onup>60</onup>
+						<ondown>10</ondown>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>40</top>
+						<width>250</width>
+						<height>40</height>
+						<texture flipx="true">blood.gif</texture>
+						<visible>Control.HasFocus(71)</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>Controls Current Weapon</description>
+			<enable>IsEmpty(window.Property(onfire))</enable>
+			<left>1076</left>
+			<top>400</top>
+			<animation effect="fade" time="300" delay="1000">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+			<control type="button" id="7001">
+				<left>-52</left>
+				<top>-52</top>
+				<width>1</width>
+				<height>1</height>
+				<font>-</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>ClearProperty(weapon_fire)</onfocus>
+				<onfocus>AlarmClock(weapon_fire,SetProperty(weapon_fire,1),0:00,true)</onfocus>
+				<onfocus>SetFocus(7000)</onfocus>
+				<visible>!IsEmpty(window.property(weapon_fire))</visible>
+			</control>
+			<control type="button" id="7001">
+				<left>-52</left>
+				<top>-52</top>
+				<width>1</width>
+				<height>1</height>
+				<font>-</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>SetProperty(weapon_fire,1)</onfocus>
+				<onfocus>AlarmClock(weapon_fire,ClearProperty(weapon_fire),0:03,true)</onfocus>
+				<onfocus>SetFocus(7000)</onfocus>
+				<visible>IsEmpty(window.property(weapon_fire))</visible>
+			</control>
+			<control type="button" id="7000">
+				<left>-52</left>
+				<top>-52</top>
+				<width>232</width>
+				<height>232</height>
+				<font>-</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>ClearProperty(weapon_fire)</onleft>
+				<onleft>CancelAlarm(weapon_fire,true)</onleft>
+				<onleft>SetProperty(weapon_direction,onleft)</onleft>
+				<onright>ClearProperty(weapon_fire)</onright>
+				<onright>CancelAlarm(weapon_fire,true)</onright>
+				<onright>SetProperty(weapon_direction,onright)</onright>
+				<onup>ClearProperty(weapon_fire)</onup>
+				<onup>CancelAlarm(weapon_fire,true)</onup>
+				<onup>SetProperty(weapon_direction,onup)</onup>
+				<ondown>ClearProperty(weapon_fire)</ondown>
+				<ondown>CancelAlarm(weapon_fire,true)</ondown>
+				<ondown>SetProperty(weapon_direction,ondown)</ondown>
+				<onclick condition="Control.IsVisible(7001)">SetFocus(7001)</onclick>
+				<onclick condition="Control.IsVisible(7002)">SetFocus(7002)</onclick>
+				<!--<onclick>control.move(1150,-1)</onclick>-->
+			</control>
+			<control type="group">
+				<visible>Control.HasFocus(7000)</visible>
+				<animation effect="fade" time="300">Visible</animation>
+				<animation effect="fade" time="300">Hidden</animation>
+				<control type="image">
+					<left>-10</left>
+					<top>-10</top>
+					<width>148</width>
+					<height>148</height>
+					<!-- <texture border="5">TWD-button-nofocus.png</texture> -->
+					<texture border="5">TWD-folder-focus.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="button">
+					<left>-47</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<font>-</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ClearProperty(weapon_fire)</onclick>
+					<onclick>CancelAlarm(weapon_fire,true)</onclick>
+					<onclick>SetProperty(weapon_direction,onleft)</onclick>
+				</control>
+				<control type="image">
+					<left>-47</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<texture>TWD-arrow-big-left.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="fade" start="100" end="0" time="250" condition="SubString(window.property(weapon_direction),onleft)">conditional</animation>
+				</control>
+				<control type="button">
+					<left>133</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<font>-</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ClearProperty(weapon_fire)</onclick>
+					<onclick>CancelAlarm(weapon_fire,true)</onclick>
+					<onclick>SetProperty(weapon_direction,onright)</onclick>
+				</control>
+				<control type="image">
+					<left>133</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<texture>TWD-arrow-big-right.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="fade" start="100" end="0" time="250" condition="SubString(window.property(weapon_direction),onright)">conditional</animation>
+				</control>
+				<control type="button">
+					<left>0</left>
+					<top>-47</top>
+					<width>128</width>
+					<height>42</height>
+					<font>-</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ClearProperty(weapon_fire)</onclick>
+					<onclick>CancelAlarm(weapon_fire,true)</onclick>
+					<onclick>SetProperty(weapon_direction,onup)</onclick>
+				</control>
+				<control type="image">
+					<left>-47</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<texture>TWD-arrow-big-left.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" start="0" end="90" center="64,64" time="0" condition="true">conditional</animation>
+					<animation effect="fade" start="100" end="0" time="250" condition="SubString(window.property(weapon_direction),ondown)">conditional</animation>
+				</control>
+				<control type="button">
+					<left>0</left>
+					<top>133</top>
+					<width>128</width>
+					<height>42</height>
+					<font>-</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>ClearProperty(weapon_fire)</onclick>
+					<onclick>CancelAlarm(weapon_fire,true)</onclick>
+					<onclick>SetProperty(weapon_direction,ondown)</onclick>
+				</control>
+				<control type="image">
+					<left>133</left>
+					<top>0</top>
+					<width>42</width>
+					<height>128</height>
+					<texture>TWD-arrow-big-right.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" start="0" end="90" center="64,64" time="0" condition="true">conditional</animation>
+					<animation effect="fade" start="100" end="0" time="250" condition="SubString(window.property(weapon_direction),onup)">conditional</animation>
+				</control>
+			</control>
+
+			<control type="group">
+				<animation effect="rotate" start="0" end="90" center="64,64" time="400" condition="SubString(window.property(weapon_direction),ondown)">conditional</animation>
+				<animation effect="rotate" start="0" end="-90" center="64,64" time="400" condition="SubString(window.property(weapon_direction),onup)">conditional</animation>
+				<animation effect="rotate" start="0" end="-180" center="64,64" time="400" condition="SubString(window.property(weapon_direction),onright)">conditional</animation>
+				<animation effect="rotatex" start="0" end="-180" center="64,0" time="0" condition="SubString(window.property(weapon_direction),onright) | SubString(window.property(weapon_direction),onup)">conditional</animation>
+				<control type="image">
+					<description>bullet</description>
+					<left>0</left>
+					<top>0</top>
+					<width>128</width>
+					<height>128</height>
+					<aspectratio>keep</aspectratio>
+					<texture>balle2.png</texture>
+					<visible>IntegerGreaterThan(Container(1150).NumItems,0) + !SubString(window.property(current_weapon),machete)</visible>
+					<animation effect="slide" start="0,0" end="-1280,0" time="2500" tween="quadratic" easing="out" reversible="false" condition="!IsEmpty(window.property(weapon_fire))">conditional</animation>
+				</control>
+				<control type="image">
+					<description>colt Image</description>
+					<left>0</left>
+					<top>0</top>
+					<width>128</width>
+					<height>128</height>
+					<texture>colt.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>IntegerGreaterThan(Container(1150).NumItems,0) + !SubString(window.property(current_weapon),machete)</visible>
+					<animation effect="rotate" start="0" end="1080" center="80,64" time="1000" delay="50" tween="back" easing="inout" reversible="false" condition="!IsEmpty(window.property(weapon_fire))">conditional</animation>
+				</control>
+				<control type="image">
+					<description>gator-machete Image</description>
+					<left>0</left>
+					<top>0</top>
+					<width>128</width>
+					<height>128</height>
+					<texture>gator-machete1.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>SubString(window.property(current_weapon),machete)</visible>
+					<animation effect="rotate" start="0" end="1080" center="80,64" time="1000" delay="50" tween="back" easing="inout" reversible="false" condition="!IsEmpty(window.property(weapon_fire))">conditional</animation>
+				</control>
+			</control>
+			<control type="fixedlist" id="1150">
+				<description>Colt Cartridge (visible 6 max)</description>
+				<left>0</left>
+				<top>180</top>
+				<width>132</width>
+				<height>50</height>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime>200</scrolltime>
+				<focusposition>6</focusposition>
+				<orientation>horizontal</orientation>
+				<hitrect x="1" y="1" w="0" h="0" />
+				<itemlayout height="50" width="22">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>22</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>balle.png</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50" width="22">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>22</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>balle.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>10</top>
+						<width>22</width>
+						<height>40</height>
+						<label>[B]$INFO[ListItem.Label2][/B]</label>
+						<font>font12</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>black</textcolor>
+						<shadowcolor>red</shadowcolor>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>Menu On Right</description>
+			<left>1280</left>
+			<animation effect="slide" start="0,0" end="-250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(8000).HasFocus | Control.HasFocus(8001) | Control.HasFocus(7999)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="300,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(8000).HasFocus | Control.HasFocus(8001)">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="50,0" time="300" tween="quadratic" easing="out" condition="![ControlGroup(8000).HasFocus | Control.HasFocus(8001)]">WindowClose</animation>
+			<animation effect="slide" start="50,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+			<visible>!Control.IsVisible(666)</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<control type="button" id="7999">
+				<description>Fake button for mouse control</description>
+				<left>0</left>
+				<top>0</top>
+				<width>250</width>
+				<height>720</height>
+				<label>-</label>
+				<font>-</font>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+				<visible>true</visible>
+			</control>
+			<control type="button" id="8001">
+				<left>-42</left>
+				<top>260</top>
+				<width>42</width>
+				<height>128</height>
+				<font>-</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+			<control type="image">
+				<left>-42</left>
+				<top>260</top>
+				<width>42</width>
+				<height>128</height>
+				<texture flipx="true">TWD-HasSub.png</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="image">
+				<left>-10</left>
+				<top>0</top>
+				<width>260</width>
+				<height>720</height>
+				<texture flipx="true" border="0,0,10,0">TWD-MediaBladeSub.png</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<left>15</left>
+				<top>40</top>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>logo2.png</texture>
+			</control>
+
+			<control type="grouplist" id="8000">
+				<left>0</left>
+				<top>130</top>
+				<width>250</width>
+				<height>600</height>
+				<onleft>8000</onleft>
+				<onright>8000</onright>
+				<onup>8000</onup>
+				<ondown>8000</ondown>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<control type="group" id="300">
+					<height>40</height>
+					<control type="button" id="303">
+						<description>button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<label>-</label>
+						<font>-</font>
+						<onleft>8000</onleft>
+						<onright>8000</onright>
+						<onup>400</onup>
+						<ondown>50</ondown>
+						<enable>false</enable>
+					</control>
+					<control type="image" id="302">
+						<left>0</left>
+						<top>0</top>
+						<width>250</width>
+						<height>40</height>
+						<texture>blood.gif</texture>
+					</control>
+					<control type="label" id="301">
+						<left>0</left>
+						<top>0</top>
+						<width>250</width>
+						<height>35</height>
+						<font>font12</font>
+						<label>Peoples</label>
+						<textcolor>FFF30000</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+
+				<control type="panel" id="250">
+					<description>peoples panel</description>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<scrolltime>0</scrolltime>
+					<itemgap>2</itemgap>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>250</onleft>
+					<onright>250</onright>
+					<itemlayout height="61" width="61">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture border="5">TWD-button-nofocus.png</texture>
+						</control>
+						<control type="image">
+							<description>people alive</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF339933</colordiffuse>
+							<visible>SubString(ListItem.Label2,alive)</visible>
+						</control>
+						<control type="image">
+							<description>people dead</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FFA52A2A</colordiffuse>
+							<visible>SubString(ListItem.Label2,dead)</visible>
+						</control>
+						<control type="image">
+							<description>people undead</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF666666</colordiffuse>
+							<visible>SubString(ListItem.Label2,undead)</visible>
+						</control>
+						<control type="image">
+							<description>people unknown</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF336699</colordiffuse>
+							<visible>SubString(ListItem.Label2,unknown)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="61" width="61">
+						<control type="image">
+							<description>focus</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture border="5">TWD-folder-focus.png</texture>
+						</control>
+						<control type="image">
+							<description>people alive</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF339933</colordiffuse>
+							<visible>SubString(ListItem.Label2,alive)</visible>
+						</control>
+						<control type="image">
+							<description>people dead</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FFA52A2A</colordiffuse>
+							<visible>SubString(ListItem.Label2,dead)</visible>
+						</control>
+						<control type="image">
+							<description>people undead</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF666666</colordiffuse>
+							<visible>SubString(ListItem.Label2,undead)</visible>
+						</control>
+						<control type="image">
+							<description>people unknown</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordertexture border="5">TWD-ThumbShadow.png</bordertexture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FF336699</colordiffuse>
+							<visible>SubString(ListItem.Label2,unknown)</visible>
+						</control>
+						<control type="label">
+							<description>name label</description>
+							<left>0</left>
+							<top>36</top>
+							<width>61</width>
+							<height>25</height>
+							<font>font10</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+				</control>
+
+				<control type="group" id="400">
+					<height>40</height>
+					<control type="button" id="403">
+						<description>button</description>
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>250</width>
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<label>-</label>
+						<font>-</font>
+						<onleft>8000</onleft>
+						<onright>8000</onright>
+						<onup>50</onup>
+						<ondown>300</ondown>
+						<enable>false</enable>
+					</control>
+					<control type="image" id="402">
+						<left>0</left>
+						<top>0</top>
+						<width>250</width>
+						<height>40</height>
+						<texture>blood.gif</texture>
+					</control>
+					<control type="label" id="401">
+						<left>0</left>
+						<top>0</top>
+						<width>250</width>
+						<height>35</height>
+						<font>font12</font>
+						<label>Weapons</label>
+						<textcolor>FFF30000</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+
+				<control type="panel" id="350">
+					<description>items panel</description>
+					<left>0</left>
+					<top>0</top>
+					<width>250</width>
+					<height>250</height>
+					<scrolltime>0</scrolltime>
+					<itemgap>2</itemgap>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>350</onleft>
+					<onright>350</onright>
+					<itemlayout height="61" width="61">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture border="5">TWD-button-nofocus.png</texture>
+						</control>
+						<control type="image">
+							<description>item</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout height="61" width="61">
+						<control type="image">
+							<description>focus</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture border="5">TWD-folder-focus.png</texture>
+						</control>
+						<control type="image">
+							<description>item</description>
+							<left>0</left>
+							<top>0</top>
+							<width>61</width>
+							<height>61</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordersize>5</bordersize>
+							<aspectratio>keep</aspectratio>
+						</control>
+					</focusedlayout>
+				</control>
+
+			</control>
+		</control>
+
+		<control type="label">
+			<description>time label</description>
+			<left>20r</left>
+			<top>5</top>
+			<width>200</width>
+			<height>30</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Time]</label>
+			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+		</control>
+
+		<control type="group">
+			<description>to be continued...</description>
+			<visible>!IsEmpty(window.property(ToBeContinued))</visible>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" delay="100" time="10000" />
+				<effect type="zoom" center="auto" start="10" end="100" delay="100" time="10000" tween="linear" easing="out" />
+			</animation>
+			<animation effect="fade" time="350">Hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>720</height>
+				<texture>ToBeContinued.jpg</texture>
+				<colordiffuse>red</colordiffuse>
+			</control>
+			<control type="grouplist">
+				<visible>!IsEmpty(window.property(ToBeContinued))</visible>
+				<animation effect="fade" delay="10100" time="1000">Visible</animation>
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>150</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<control type="image">
+					<width>256</width>
+					<height>143</height>
+					<texture flipx="true">blood.gif</texture>
+				</control>
+				<control type="image">
+					<width>256</width>
+					<height>143</height>
+					<texture>blood.gif</texture>
+				</control>
+				<control type="image">
+					<width>256</width>
+					<height>143</height>
+					<texture flipx="true">blood.gif</texture>
+				</control>
+				<control type="image">
+					<width>256</width>
+					<height>143</height>
+					<texture>blood.gif</texture>
+				</control>
+				<control type="image">
+					<width>256</width>
+					<height>143</height>
+					<texture flipx="true">blood.gif</texture>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.game.duck.hunt" name="Duck Hunt"
+       version="1.0.0" provider-name="Frost (passion-xbmc.org)">
+  <requires>
+    <import addon="xbmc.python" version="2.0"/>
+    <import addon="script.xbmc.games.scores" version="1.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Duck Hunt</summary>
+    <description>Duck Hunt</description>
+  </extension>
+</addon>

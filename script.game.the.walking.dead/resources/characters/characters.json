@@ -1,0 +1,760 @@
+{
+  "Alexandria Safe-Zone Community": [
+    {
+      "articlename": "Aaron (Comic Series)", 
+      "image": "Aaron.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100405232757/walkingdead/images/thumb/a/a4/Aaron.jpg/116px-Aaron.jpg", 
+      "name": "Aaron", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Eric (Alexandria)", 
+      "image": "Eric.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100405233221/walkingdead/images/thumb/0/0c/Eric.jpg/116px-Eric.jpg", 
+      "name": "Eric", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Heath", 
+      "image": "Banheath.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120818203030/walkingdead/images/thumb/b/b2/Banheath.png/117px-Banheath.png", 
+      "name": "Heath", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Dr. Denise Cloyd", 
+      "image": "315px-Denise Cloyd.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120624073549/walkingdead/images/thumb/7/74/315px-Denise_Cloyd.jpg/117px-315px-Denise_Cloyd.jpg", 
+      "name": "Denise", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Holly", 
+      "image": "Hollynobub.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120626175160/walkingdead/images/thumb/d/d8/Hollynobub.png/116px-Hollynobub.png", 
+      "name": "Holly", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Olivia", 
+      "image": "OlivBan1.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20121004064427/walkingdead/images/thumb/8/8e/OlivBan1.png/117px-OlivBan1.png", 
+      "name": "Olivia", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Barbara", 
+      "image": "Bancsbar.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823155425/walkingdead/images/d/d4/Bancsbar.png", 
+      "name": "Barbara", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Scott (Comic Series)", 
+      "image": "Scotty.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120625031335/walkingdead/images/thumb/0/01/Scotty.png/117px-Scotty.png", 
+      "name": "Scott", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Bruce (Alexandria)", 
+      "image": "Bruce (Alexandria).JPG", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20110106095603/walkingdead/images/thumb/6/65/Bruce_%28Alexandria%29.JPG/116px-Bruce_%28Alexandria%29.JPG", 
+      "name": "Bruce", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Tobin", 
+      "image": "Bancstob.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120823155757/walkingdead/images/thumb/2/23/Bancstob.png/117px-Bancstob.png", 
+      "name": "Tobin", 
+      "statut": "Dead"
+    }
+  ], 
+  "Allen & Donna's Family": [
+    {
+      "articlename": "Allen (Comic Series)", 
+      "image": "Alennbetter.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120702200839/walkingdead/images/thumb/1/15/Alennbetter.png/117px-Alennbetter.png", 
+      "name": "Allen", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Donna (Comic Series)", 
+      "image": "Donn.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120505112457/walkingdead/images/thumb/f/f4/Donn.png/116px-Donn.png", 
+      "name": "Donna", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Ben (Comic Series)", 
+      "image": "Bennn.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120505112142/walkingdead/images/thumb/2/26/Bennn.png/117px-Bennn.png", 
+      "name": "Ben", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Billy (Comic Series)", 
+      "image": "Billll.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120505112326/walkingdead/images/thumb/a/ad/Billll.png/116px-Billll.png", 
+      "name": "Billy", 
+      "statut": "Dead"
+    }
+  ], 
+  "Anderson Family": [
+    {
+      "articlename": "Pete Anderson", 
+      "image": "Peter2.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20110420140520/walkingdead/images/thumb/3/3a/Peter2.jpg/116px-Peter2.jpg", 
+      "name": "Pete", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Jessie Anderson", 
+      "image": "Bancsjes.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823160228/walkingdead/images/thumb/b/ba/Bancsjes.png/116px-Bancsjes.png", 
+      "name": "Jessie", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Ron Anderson", 
+      "image": "Ron.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20110106094848/walkingdead/images/thumb/5/5c/Ron.jpg/116px-Ron.jpg", 
+      "name": "Ron", 
+      "statut": "Dead"
+    }
+  ], 
+  "Andrea's Family": [
+    {
+      "articlename": "Andrea (Comic Series)", 
+      "image": "Annn.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120625202616/walkingdead/images/thumb/4/48/Annn.png/116px-Annn.png", 
+      "name": "Andrea", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Amy (Comic Series)", 
+      "image": "Amy.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100313154110/walkingdead/images/thumb/6/60/Amy.jpg/116px-Amy.jpg", 
+      "name": "Amy", 
+      "statut": "Dead"
+    }
+  ], 
+  "Blake Family": [
+    {
+      "articlename": "Brian Blake", 
+      "image": "Philip.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100316010057/walkingdead/images/thumb/3/3b/Philip.jpg/116px-Philip.jpg", 
+      "name": "Brian", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Penny Blake", 
+      "image": "Bancspen.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823155221/walkingdead/images/thumb/6/64/Bancspen.png/115px-Bancspen.png", 
+      "name": "Penny", 
+      "statut": "Undead"
+    }
+  ], 
+  "Carol's Family": [
+    {
+      "articlename": "Sophia (Comic Series)", 
+      "image": "Sop.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120505111352/walkingdead/images/thumb/8/8c/Sop.png/116px-Sop.png", 
+      "name": "Sophia", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Carol (Comic Series)", 
+      "image": "Carol.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120808184348/walkingdead/images/thumb/d/df/Carol.jpg/116px-Carol.jpg", 
+      "name": "Carol", 
+      "statut": "Alive"
+    }
+  ], 
+  "Greene Family": [
+    {
+      "articlename": "Maggie Greene (Comic Series)", 
+      "image": "Magg.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120624203647/walkingdead/images/thumb/f/f2/Magg.png/117px-Magg.png", 
+      "name": "Maggie", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Hershel Greene (Comic Series)", 
+      "image": "Hershel Greene.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20100314150416/walkingdead/images/thumb/0/04/Hershel_Greene.jpg/116px-Hershel_Greene.jpg", 
+      "name": "Hershel", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Billy Greene", 
+      "image": "Billy Greene.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100314150403/walkingdead/images/thumb/8/83/Billy_Greene.jpg/116px-Billy_Greene.jpg", 
+      "name": "Billy", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Rachel Greene", 
+      "image": "Rachel Greene.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100314150459/walkingdead/images/thumb/f/f7/Rachel_Greene.jpg/116px-Rachel_Greene.jpg", 
+      "name": "Rachel", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Susie Greene", 
+      "image": "Susie Greene.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20100314150509/walkingdead/images/thumb/f/f2/Susie_Greene.jpg/116px-Susie_Greene.jpg", 
+      "name": "Susie", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Lacey Greene (Comic Series)", 
+      "image": "Lacey Greene.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100314150427/walkingdead/images/thumb/b/b7/Lacey_Greene.jpg/116px-Lacey_Greene.jpg", 
+      "name": "Lacey", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Arnold Greene", 
+      "image": "Arnold Greene.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100314150335/walkingdead/images/thumb/c/cb/Arnold_Greene.jpg/116px-Arnold_Greene.jpg", 
+      "name": "Arnold", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Shawn Greene (Comic Series)", 
+      "image": "Shawn Greene.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100314162257/walkingdead/images/thumb/2/2e/Shawn_Greene.jpg/116px-Shawn_Greene.jpg", 
+      "name": "Shawn", 
+      "statut": "Dead"
+    }
+  ], 
+  "Greene Neighbors": [
+    {
+      "articlename": "Otis (Comic Series)", 
+      "image": "Otis.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20100313155128/walkingdead/images/thumb/1/1e/Otis.jpg/116px-Otis.jpg", 
+      "name": "Otis", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Patricia (Comic Series)", 
+      "image": "Patricia (Comic).png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120311190748/walkingdead/images/thumb/d/dd/Patricia_%28Comic%29.png/116px-Patricia_%28Comic%29.png", 
+      "name": "Patricia", 
+      "statut": "Dead"
+    }
+  ], 
+  "Grimes Family": [
+    {
+      "articlename": "Rick Grimes (Comic Series)", 
+      "image": "Updated Rick Face2.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20121021101042/walkingdead/images/thumb/2/22/Updated_Rick_Face2.png/117px-Updated_Rick_Face2.png", 
+      "name": "Rick", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Carl Grimes (Comic Series)", 
+      "image": "BanCarlcs.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120926180204/walkingdead/images/thumb/4/4f/BanCarlcs.png/116px-BanCarlcs.png", 
+      "name": "Carl", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Lori Grimes (Comic Series)", 
+      "image": "Lor.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120505110816/walkingdead/images/thumb/8/8a/Lor.png/117px-Lor.png", 
+      "name": "Lori", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Judith Grimes", 
+      "image": "Judgri.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120625094833/walkingdead/images/thumb/2/23/Judgri.jpg/117px-Judgri.jpg", 
+      "name": "Judith", 
+      "statut": "Dead"
+    }
+  ], 
+  "Hilltop Colony Survivors": [
+    {
+      "articlename": "Paul Monroe", 
+      "image": "jeesus1.png", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120606173425/walkingdead/images/thumb/8/81/Jeesus1.png/117px-Jeesus1.png", 
+      "name": "Paul", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Gregory (Comic Series)", 
+      "image": "Bancsgregory.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120815134749/walkingdead/images/thumb/7/73/Bancsgregory.png/116px-Bancsgregory.png", 
+      "name": "Gregory", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Kal", 
+      "image": "BanKKal.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120928183541/walkingdead/images/thumb/7/78/BanKKal.png/115px-BanKKal.png", 
+      "name": "Kal", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Eduardo", 
+      "image": "Bancseduardo.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120815135823/walkingdead/images/thumb/b/be/Bancseduardo.png/116px-Bancseduardo.png", 
+      "name": "Eduardo", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Carson", 
+      "image": "Bancscars.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120823161413/walkingdead/images/thumb/a/ab/Bancscars.png/115px-Bancscars.png", 
+      "name": "Carson", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Wesley", 
+      "image": "Bancswes.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823161717/walkingdead/images/thumb/0/07/Bancswes.png/117px-Bancswes.png", 
+      "name": "Wesley", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Samuel", 
+      "image": "samuelbet.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120803113747/walkingdead/images/thumb/f/f7/Samuelbet.png/115px-Samuelbet.png", 
+      "name": "Samuel", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Ethan", 
+      "image": "Bancsethan.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120815140744/walkingdead/images/thumb/6/6d/Bancsethan.png/117px-Bancsethan.png", 
+      "name": "Ethan", 
+      "statut": "Dead"
+    }
+  ], 
+  "Jones Family": [
+    {
+      "articlename": "Morgan Jones (Comic Series)", 
+      "image": "More.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120625210024/walkingdead/images/thumb/7/70/More.png/116px-More.png", 
+      "name": "Morgan", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Duane Jones (Comic Series)", 
+      "image": "Bancsduane.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120820105110/walkingdead/images/thumb/8/81/Bancsduane.png/117px-Bancsduane.png", 
+      "name": "Duane", 
+      "statut": "Undead"
+    }
+  ], 
+  "Michonne's Group": [
+    {
+      "articlename": "Michonne (Comic Series)", 
+      "image": "MICHONNEBET.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120702155750/walkingdead/images/thumb/e/e1/MICHONNEBET.png/116px-MICHONNEBET.png", 
+      "name": "Michonne", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Mike (Comic Series)", 
+      "image": "Mike (Comic).jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120825124347/walkingdead/images/thumb/1/11/Mike_%28Comic%29.jpg/115px-Mike_%28Comic%29.jpg", 
+      "name": "Mike", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Terry (Comic Series)", 
+      "image": "Terry_(Comic).jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120825124204/walkingdead/images/thumb/9/96/Terry_%28Comic%29.jpg/117px-Terry_%28Comic%29.jpg", 
+      "name": "Terry", 
+      "statut": "Dead"
+    }
+  ], 
+  "Monroe Family": [
+    {
+      "articlename": "Spencer Monroe", 
+      "image": "Bancspenc.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823155933/walkingdead/images/thumb/7/7a/Bancspenc.png/116px-Bancspenc.png", 
+      "name": "Spencer", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Douglas Monroe", 
+      "image": "Untitledgggh.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120403113638/walkingdead/images/thumb/f/f3/Untitledgggh.jpg/116px-Untitledgggh.jpg", 
+      "name": "Douglas", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Regina Monroe", 
+      "image": "Untitledfh.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120403113240/walkingdead/images/thumb/7/73/Untitledfh.jpg/117px-Untitledfh.jpg", 
+      "name": "Regina", 
+      "statut": "Dead"
+    }
+  ], 
+  "Nicholas & Paula's Family": [
+    {
+      "articlename": "Nicholas", 
+      "image": "Bancsnicholas.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120815185218/walkingdead/images/thumb/8/8c/Bancsnicholas.png/116px-Bancsnicholas.png", 
+      "name": "Nicholas", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Paula (Comic Series)", 
+      "image": "Bancspaula.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120823160425/walkingdead/images/4/43/Bancspaula.png", 
+      "name": "Paula", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Mikey", 
+      "image": "mickey2.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20110419125626/walkingdead/images/thumb/b/b8/Mickey2.jpg/116px-Mickey2.jpg", 
+      "name": "Mikey", 
+      "statut": "Alive"
+    }
+  ], 
+  "Non-Family Survivors": [
+    {
+      "articlename": "Shane (Comic Series)", 
+      "image": "ShaneComic.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20121020202128/walkingdead/images/thumb/c/c1/ShaneComic.png/117px-ShaneComic.png", 
+      "name": "Shane", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Glenn (Comic Series)", 
+      "image": "Glennbetter.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120702200735/walkingdead/images/thumb/d/d8/Glennbetter.png/117px-Glennbetter.png", 
+      "name": "Glenn", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Dale (Comic Series)", 
+      "image": "Dale.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120808184119/walkingdead/images/thumb/9/9f/Dale.jpg/116px-Dale.jpg", 
+      "name": "Dale", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Jim (Comic Series)", 
+      "image": "Jim.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100313144825/walkingdead/images/thumb/9/9a/Jim.jpg/116px-Jim.jpg", 
+      "name": "Jim", 
+      "statut": "Undead"
+    }
+  ], 
+  "Post-Prison Survivors": [
+    {
+      "articlename": "Rosita Espinosa", 
+      "image": "Rosita Espinosa.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100328172205/walkingdead/images/thumb/b/b6/Rosita_Espinosa.jpg/116px-Rosita_Espinosa.jpg", 
+      "name": "Rosita", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Dr. Eugene Porter", 
+      "image": "Dr. Eugene Porter.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100328172351/walkingdead/images/thumb/6/6f/Dr._Eugene_Porter.jpg/116px-Dr._Eugene_Porter.jpg", 
+      "name": "Eugene", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Gabriel Stokes", 
+      "image": "Fr. Gabriel Stokes.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100328172526/walkingdead/images/thumb/5/5b/Fr._Gabriel_Stokes.jpg/116px-Fr._Gabriel_Stokes.jpg", 
+      "name": "Gabriel", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Sgt. Abraham Ford", 
+      "image": "Sgt. Abraham Ford.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100328172026/walkingdead/images/thumb/3/3e/Sgt._Abraham_Ford.jpg/116px-Sgt._Abraham_Ford.jpg", 
+      "name": "Abraham", 
+      "statut": "Dead"
+    }
+  ], 
+  "Prison Survivors": [
+    {
+      "articlename": "Axel (Comic Series)", 
+      "image": "Axe.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120505112930/walkingdead/images/thumb/f/fb/Axe.png/117px-Axe.png", 
+      "name": "Axel", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Dexter", 
+      "image": "Dexter.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20100313153530/walkingdead/images/thumb/8/82/Dexter.jpg/116px-Dexter.jpg", 
+      "name": "Dexter", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Thomas", 
+      "image": "Thomas.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100314150530/walkingdead/images/thumb/f/f2/Thomas.jpg/116px-Thomas.jpg", 
+      "name": "Thomas", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Andrew (Comic Series)", 
+      "image": "Andrew.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100313153251/walkingdead/images/thumb/4/44/Andrew.jpg/116px-Andrew.jpg", 
+      "name": "Andrew", 
+      "statut": "Undead"
+    }
+  ], 
+  "The Hunters": [
+    {
+      "articlename": "Chris (Hunter)", 
+      "image": "Chris (Hunter).jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100331232456/walkingdead/images/thumb/2/28/Chris_%28Hunter%29.jpg/116px-Chris_%28Hunter%29.jpg", 
+      "name": "Chris", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Theresa", 
+      "image": "Theresa.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100331233849/walkingdead/images/thumb/e/ee/Theresa.jpg/116px-Theresa.jpg", 
+      "name": "Theresa", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Albert", 
+      "image": "Albert.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100331234620/walkingdead/images/thumb/7/74/Albert.jpg/116px-Albert.jpg", 
+      "name": "Albert", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "David (Hunter)", 
+      "image": "David.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100401000613/walkingdead/images/thumb/4/4f/David.jpg/116px-David.jpg", 
+      "name": "David", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Greg (Comic Series)", 
+      "image": "Greg.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100331235925/walkingdead/images/thumb/0/06/Greg.jpg/116px-Greg.jpg", 
+      "name": "Greg", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Charlie (Comic Series)", 
+      "image": "Unnamed Hunter.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100401000325/walkingdead/images/thumb/7/74/Unnamed_Hunter.jpg/116px-Unnamed_Hunter.jpg", 
+      "name": "Charlie", 
+      "statut": "Dead"
+    }
+  ], 
+  "The Saviors": [
+    {
+      "articlename": "Negan", 
+      "image": "Bannegan.png", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20120711185740/walkingdead/images/thumb/c/cb/Bannegan.png/117px-Bannegan.png", 
+      "name": "Negan", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Dwight", 
+      "image": "DwightBanB.png", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20121122204535/walkingdead/images/thumb/5/56/DwightBanB.png/116px-DwightBanB.png", 
+      "name": "Dwight", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Tara (Comic Series)", 
+      "image": "TaraCS.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20121114201839/walkingdead/images/thumb/5/51/TaraCS.png/117px-TaraCS.png", 
+      "name": "Tara", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "John (Comic Series)", 
+      "image": "JohnBanSav1.png", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20121114152829/walkingdead/images/thumb/3/39/JohnBanSav1.png/117px-JohnBanSav1.png", 
+      "name": "John", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Mike (Savior)", 
+      "image": "MikeSaviorcomicface.png", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120711153403/walkingdead/images/thumb/5/54/MikeSaviorcomicface.png/117px-MikeSaviorcomicface.png", 
+      "name": "Mike", 
+      "statut": "Alive"
+    }, 
+    {
+      "articlename": "Carson (Savior)", 
+      "image": "USav15.2.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20121116164410/walkingdead/images/thumb/a/a0/USav15.2.png/109px-USav15.2.png", 
+      "name": "Carson", 
+      "statut": "Alive"
+    }
+  ], 
+  "Tyreese's Family": [
+    {
+      "articlename": "Tyreese (Comic Series)", 
+      "image": "Tyreese.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100313154520/walkingdead/images/thumb/7/76/Tyreese.jpg/116px-Tyreese.jpg", 
+      "name": "Tyreese", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Julie", 
+      "image": "Julie.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100313154751/walkingdead/images/thumb/d/d8/Julie.jpg/116px-Julie.jpg", 
+      "name": "Julie", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Chris (Comic Series)", 
+      "image": "Chris better.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120403114648/walkingdead/images/thumb/a/ac/Chris_better.jpg/117px-Chris_better.jpg", 
+      "name": "Chris", 
+      "statut": "Dead"
+    }
+  ], 
+  "Washington DC Scavengers": [
+    {
+      "articlename": "Derek", 
+      "image": "Bancsderek.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120823160626/walkingdead/images/thumb/6/68/Bancsderek.png/117px-Bancsderek.png", 
+      "name": "Derek", 
+      "statut": "Dead"
+    }
+  ], 
+  "Woodbury Survivors": [
+    {
+      "articlename": "Lilly Caul (Comic Series)", 
+      "image": "Lilly.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100328164346/walkingdead/images/thumb/a/a9/Lilly.jpg/116px-Lilly.jpg", 
+      "name": "Lilly", 
+      "statut": "Unknown"
+    }, 
+    {
+      "articlename": "Bob Stookey", 
+      "image": "Bob.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100318233128/walkingdead/images/thumb/0/04/Bob.jpg/116px-Bob.jpg", 
+      "name": "Bob", 
+      "statut": "Unknown"
+    }, 
+    {
+      "articlename": "Miss Williams", 
+      "image": "misswilllliams.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20110305101123/walkingdead/images/thumb/a/a3/Misswilllliams.jpg/117px-Misswilllliams.jpg", 
+      "name": "Mrs. Williams", 
+      "statut": "Unknown"
+    }, 
+    {
+      "articlename": "Wes", 
+      "image": "Wes123.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20110305102052/walkingdead/images/thumb/b/be/Wes123.jpg/117px-Wes123.jpg", 
+      "name": "Wes", 
+      "statut": "Unknown"
+    }, 
+    {
+      "articlename": "Jared", 
+      "image": "Bancsjared.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120820105320/walkingdead/images/thumb/e/e8/Bancsjared.png/117px-Bancsjared.png", 
+      "name": "Jared", 
+      "statut": "Unknown"
+    }, 
+    {
+      "articlename": "Bruce Cooper", 
+      "image": "Bruce Cooper.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100316012532/walkingdead/images/thumb/f/ff/Bruce_Cooper.jpg/116px-Bruce_Cooper.jpg", 
+      "name": "Bruce", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Gabe", 
+      "image": "Gabe.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20120204044105/walkingdead/images/thumb/9/94/Gabe.jpg/116px-Gabe.jpg", 
+      "name": "Gabe", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Alice (Comic Series)", 
+      "image": "Alice.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100318232326/walkingdead/images/thumb/a/a8/Alice.jpg/116px-Alice.jpg", 
+      "name": "Alice", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Dr. Stevens (Comic Series)", 
+      "image": "Dr. Stevens.jpg", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20100318231151/walkingdead/images/thumb/4/4a/Dr._Stevens.jpg/116px-Dr._Stevens.jpg", 
+      "name": "Stevens", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Harold (Comic Series)", 
+      "image": "Harold.jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20100316231741/walkingdead/images/thumb/e/e0/Harold.jpg/116px-Harold.jpg", 
+      "name": "Harold", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Eugene (Woodbury)", 
+      "image": "Eugene.jpg", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20100316232740/walkingdead/images/thumb/f/ff/Eugene.jpg/116px-Eugene.jpg", 
+      "name": "Eugene", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Jim (Woodbury)", 
+      "image": "Jim (Woodbury).jpg", 
+      "imgurl": "http://images3.wikia.nocookie.net/__cb20101113194319/walkingdead/images/thumb/2/2d/Jim_%28Woodbury%29.jpg/116px-Jim_%28Woodbury%29.jpg", 
+      "name": "Jim", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Eric (Woodbury)", 
+      "image": "Bancsjimw.png", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120823155050/walkingdead/images/thumb/7/7b/Bancsjimw.png/117px-Bancsjimw.png", 
+      "name": "Eric", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Sam (Comic Series)", 
+      "image": "SamComicface.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20120613151509/walkingdead/images/thumb/b/b9/SamComicface.jpg/117px-SamComicface.jpg", 
+      "name": "Sam", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Daniel (Comic Series)", 
+      "image": "Bancsdan.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823154843/walkingdead/images/thumb/3/36/Bancsdan.png/114px-Bancsdan.png", 
+      "name": "Daniel", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Matthew (Woodbury)", 
+      "image": "Bancsmat.png", 
+      "imgurl": "http://images1.wikia.nocookie.net/__cb20120823154640/walkingdead/images/thumb/c/c7/Bancsmat.png/117px-Bancsmat.png", 
+      "name": "Matthew", 
+      "statut": "Dead"
+    }, 
+    {
+      "articlename": "Caesar Martinez (Comic Series)", 
+      "image": "Caesar Martinez.jpg", 
+      "imgurl": "http://images2.wikia.nocookie.net/__cb20100316010112/walkingdead/images/thumb/1/18/Caesar_Martinez.jpg/116px-Caesar_Martinez.jpg", 
+      "name": "Caesar", 
+      "statut": "Undead"
+    }, 
+    {
+      "articlename": "Scott Moon (Comic Series)", 
+      "image": "Scott_Moon.png", 
+      "imgurl": "http://images4.wikia.nocookie.net/__cb20121111211717/walkingdead/images/thumb/d/d9/Scott_Moon.png/115px-Scott_Moon.png", 
+      "name": "Scott", 
+      "statut": "Undead"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+﻿<window type="dialog">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<animation effect="fade" time="250">WindowOpen</animation>
+	<animation effect="fade" time="250">WindowClose</animation>
+	<onload condition="Control.HasFocus(50)">AlarmClock(automove,Control.Move(50,1),00:15,silent,loop)</onload>
+	<onunload>CancelAlarm(automove,true)</onunload>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-680,0" time="500" condition="Container(50).Hasfocus(1)">conditional</animation>
+			<animation effect="slide" start="0,0" end="680,0" time="500" condition="Container(50).Hasfocus(2)">conditional</animation>
+			<animation effect="slide" start="0,0" end="500,130" time="500" condition="Container(50).Hasfocus(3)">conditional</animation>
+			<control type="image">
+				<left>-820</left>
+				<top>-130</top>
+				<width>2920</width>
+				<height>130</height>
+				<texture>TWD-hint-overlay3.png</texture>
+			</control>
+			<control type="image">
+				<left>-820</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>720</height>
+				<texture>TWD-hint-overlay3.png</texture>
+			</control>
+			<control type="image">
+				<left>820</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>720</height>
+				<texture>TWD-hint-overlay3.png</texture>
+			</control>
+			<control type="image">
+				<left>460</left>
+				<top>0</top>
+				<width>360</width>
+				<height>720</height>
+				<texture>TWD-hint-overlay2.png</texture>
+			</control>
+		</control>
+
+		<control type="group">
+			<control type="image">
+				<left>120</left>
+				<top>300</top>
+				<width>64</width>
+				<height>64</height>
+				<texture>TWD-arrow-big-left.png</texture>
+				<visible>Container(50).Hasfocus(1)</visible>
+			</control>
+			<control type="image">
+				<left>1095</left>
+				<top>300</top>
+				<width>64</width>
+				<height>64</height>
+				<texture>TWD-arrow-big-right.png</texture>
+				<visible>Container(50).Hasfocus(2) | Container(50).Hasfocus(3)</visible>
+				<animation effect="slide" start="0,0" end="-180,130" time="500" condition="Container(50).Hasfocus(3)">conditional</animation>
+			</control>
+			<control type="image">
+				<left>190</left>
+				<top>100</top>
+				<width>2</width>
+				<height>512</height>
+				<texture>separator_vertical.png</texture>
+				<animation effect="slide" start="0,0" end="896,0" time="500" condition="Container(50).Hasfocus(2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="716,0" time="500" condition="Container(50).Hasfocus(3)">conditional</animation>
+			</control>
+		</control>
+
+		<control type="group">
+			<left>240</left>
+			<animation effect="slide" start="0,0" end="-60,0" time="500" condition="Container(50).Hasfocus(3)">conditional</animation>
+			<control type="label">
+				<left>0</left>
+				<top>150</top>
+				<width>680</width>
+				<height>60</height>
+				<font>font35_title</font>
+				<textcolor>red</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(50).ListItem.Label2,,...]</label>
+			</control>
+			<control type="textbox">
+				<left>0</left>
+				<top>240</top>
+				<width>680</width>
+				<height>250</height>
+				<font>font14</font>
+				<textcolor>white</textcolor>
+				<align>justify</align>
+				<label>$INFO[Container(50).ListItem.Property(text)]</label>
+			</control>
+			<control type="list" id="50">
+				<description>button menu</description>
+				<left>34</left>
+				<top>500</top>
+				<width>612</width>
+				<height>40</height>
+				<orientation>horizontal</orientation>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>0</scrolltime>
+				<itemlayout height="40" width="204">
+					<control type="image">
+						<left>2</left>
+						<top>0</top>
+						<width>200</width>
+						<height>40</height>
+						<texture border="5">TWD-button-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>204</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<textcolor>FF505050</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40" width="204">
+					<control type="image">
+						<left>2</left>
+						<top>0</top>
+						<width>200</width>
+						<height>40</height>
+						<texture border="5">TWD-button-focus.png</texture>
+						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>204</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<textcolor>FF999999</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(50)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>204</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(50)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$ADDON[script.game.the.walking.dead 32100]</label>
+						<label2>$ADDON[script.game.the.walking.dead 32101]</label2>
+						<property name="text">$ADDON[script.game.the.walking.dead 32102]</property>
+						<onclick>-</onclick>
+					</item>
+					<item id="2">
+						<label>$ADDON[script.game.the.walking.dead 32110]</label>
+						<label2>$ADDON[script.game.the.walking.dead 32111]</label2>
+						<property name="text">$ADDON[script.game.the.walking.dead 32112]</property>
+						<onclick>-</onclick>
+					</item>
+					<item id="3">
+						<label>$ADDON[script.game.the.walking.dead 32120]</label>
+						<label2>$ADDON[script.game.the.walking.dead 32121]</label2>
+						<property name="text">$ADDON[script.game.the.walking.dead 32122]</property>
+						<onclick>-</onclick>
+					</item>
+					<item id="4">
+						<label>12321</label>
+						<label2>$ADDON[script.game.the.walking.dead 32101]</label2>
+						<property name="text">$ADDON[script.game.the.walking.dead 32102]</property>
+						<onclick>SetProperty(FirstTimeRun,1)</onclick>
+						<onclick>SendClick(100)</onclick>
+						<visible>false</visible>
+					</item>
+				</content>
+			</control>
+			<control type="button" id="100">
+				<description>OK button</description>
+				<left>240</left>
+				<top>545</top>
+				<width>200</width>
+				<height>40</height>
+				<label>12321</label>
+				<font>font12_title</font>
+				<textcolor>FF999999</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus border="5">TWD-button-focus.png</texturefocus>
+				<texturenofocus border="5">TWD-button-nofocus.png</texturenofocus>
+				<onleft>SetFocus(50,0)</onleft>
+				<onright>SetFocus(50,2)</onright>
+				<onup>SetFocus(50,1)</onup>
+				<ondown>50</ondown>
+			</control>
+		</control>
+
+		<control type="grouplist">
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,-150" end="0,0" delay="1000" time="1000" />
+				<effect type="fade" start="0" end="100" delay="1500" time="1000" />
+			</animation>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>150</height>
+			<orientation>horizontal</orientation>
+			<align>center</align>
+			<itemgap>0</itemgap>
+			<control type="image">
+				<width>256</width>
+				<height>143</height>
+				<texture flipx="true">blood.gif</texture>
+			</control>
+			<control type="image">
+				<width>256</width>
+				<height>143</height>
+				<texture>blood.gif</texture>
+			</control>
+			<control type="image">
+				<width>256</width>
+				<height>143</height>
+				<texture flipx="true">blood.gif</texture>
+			</control>
+			<control type="image">
+				<width>256</width>
+				<height>143</height>
+				<texture>blood.gif</texture>
+			</control>
+			<control type="image">
+				<width>256</width>
+				<height>143</height>
+				<texture flipx="true">blood.gif</texture>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,59 @@
+# XBMC Media Center language file
+# Addon Name: The Walking Dead
+# Addon id: script.game.the.walking.dead
+# Addon version: 1.0.0
+# Addon Provider: Frost (passion-xbmc.org)
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Add-on XBMC Translation\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+# strings 32000 thru 32999 reserved for scripts
+msgctxt "#32000"
+msgid "The Walking Dead"
+msgstr ""
+
+msgctxt "#32100"
+msgid "Left Menu"
+msgstr ""
+
+msgctxt "#32101"
+msgid "Walking help"
+msgstr ""
+
+msgctxt "#32102"
+msgid "This tab signifies that there is a menu off to the side of this window that contains extra options for this game.  To access the menu, press button \"Context Menu\" of XBMC with your remote control or keyboard (c letter) or place your mouse pointer over the tab. [CR][CR]Click \"Ok\" to close this dialog. It will not appear again."
+msgstr ""
+
+msgctxt "#32110"
+msgid "Right Menu"
+msgstr ""
+
+msgctxt "#32111"
+msgid "Game help"
+msgstr ""
+
+msgctxt "#32112"
+msgid "-"
+msgstr ""
+
+msgctxt "#32120"
+msgid "Weapons Menu"
+msgstr ""
+
+msgctxt "#32121"
+msgid "Weapons help"
+msgstr ""
+
+msgctxt "#32122"
+msgid "-"
+msgstr ""

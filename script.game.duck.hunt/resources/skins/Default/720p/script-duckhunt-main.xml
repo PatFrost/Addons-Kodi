@@ -1,0 +1,973 @@
+<window id="3000">
+	<defaultcontrol always="true">8999</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="visualisation">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<visible>Player.HasAudio</visible>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>sky.png</texture>
+			<animation effect="fade" start="100" end="40" time="2000" condition="Player.HasAudio">conditional</animation>
+		</control>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="1280,0" time="1000000" pulse="true" tween="quadratic" easing="inout" condition="true">Conditional</animation>
+			<control type="image">
+				<description>background mountains image</description>
+				<posx>-1280</posx>
+				<posy>400</posy>
+				<width>1280</width>
+				<height>200</height>
+				<texture flipx="true">mountains.png</texture>
+			</control>
+			<control type="image">
+				<description>background mountains image</description>
+				<posx>0</posx>
+				<posy>400</posy>
+				<width>1280</width>
+				<height>200</height>
+				<texture>mountains.png</texture>
+			</control>
+		</control>
+		<control type="label">
+			<description>clock label</description>
+			<posx>20r</posx>
+			<posy>5</posy>
+			<width>200</width>
+			<height>30</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Time]</label>
+			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
+		</control>
+		<control type="multiimage">
+			<description>cloud 1 image</description>
+			<posx>20</posx>
+			<posy>30</posy>
+			<width>600</width>
+			<height>300</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath background="true">$INFO[Window.Property(sprites_dir)]clouds</imagepath>
+			<timeperimage>25000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>3000</fadetime>
+			<animation effect="slide" start="1280,0" end="-640,0" time="50000" loop="true" tween="quadratic" easing="in" condition="true">Conditional</animation>
+		</control>
+
+		<control type="group">
+			<description>birds groups</description>
+			<animation effect="rotatey" center="auto" start="0" end="-720" time="100000" loop="true" tween="easing" easing="inout" reversible="false" condition="true">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-200" time="50000" pulse="true" tween="easing" easing="inout" reversible="false" condition="true">conditional</animation>
+			<control type="group">
+				<posx>400</posx>
+				<posy>200</posy>
+				<control type="image">
+					<description>bird 1 image</description>
+					<posx>200</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird1-flying.gif</texture>
+				</control>
+				<control type="image">
+					<description>bird 2 image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird2-flying.gif</texture>
+				</control>
+				<control type="image">
+					<description>bird 3 image</description>
+					<posx>400</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>80</height>
+					<fadetime>250</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>bird3-flying.gif</texture>
+				</control>
+			</control>
+		</control>
+
+		<control type="multiimage">
+			<description>cloud 2 image</description>
+			<posx>640</posx>
+			<posy>0</posy>
+			<width>640</width>
+			<height>360</height>
+			<aspectratio>keep</aspectratio>
+			<imagepath flipx="true" background="true">$INFO[Window.Property(sprites_dir)]clouds</imagepath>
+			<timeperimage>20000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>3000</fadetime>
+			<animation effect="slide" start="1920,0" end="-1280,0" time="60000" loop="true" tween="quadratic" easing="out" condition="true">Conditional</animation>
+		</control>
+
+		<control type="button" id="299">
+			<description>click fail</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<label>-</label>
+			<font>-</font>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>8999</onleft>
+			<onright>8999</onright>
+			<onup>8999</onup>
+			<ondown>8999</ondown>
+		</control>
+
+		<control type="image">
+			<description>background overlay 1 image</description>
+			<posx>0</posx>
+			<posy>401r</posy>
+			<width>1280</width>
+			<height>402</height>
+			<texture>bush2.png</texture>
+		</control>
+		<control type="group" id="8999">
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="2000" reversible="false" condition="Player.HasAudio + System.IdleTime(10)">conditional</animation>
+				<animation effect="rotate" center="640,360" start="0" end="-360" time="20000" pulse="true" tween="bounce" easing="out" reversible="false" condition="!Player.HasAudio + System.IdleTime(10)">Conditional</animation>
+				<visible>!IntegerGreaterThan(Container(250).NumItems,0)</visible>
+				<animation effect="slide" start="0,720" end="0,0" time="1000">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,720" time="1000">Hidden</animation>
+				<control type="label">
+					<description>score label</description>
+					<posx>320</posx>
+					<posy>450</posy>
+					<width>640</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font28_title</font>
+					<textcolor>darkred</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[Container(9000).ListItem.Label2,TOP SCORE: ]</label>
+					<visible>false</visible>
+					<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				</control>
+				<control type="wraplist" id="9000">
+					<description>button menu</description>
+					<posx>320</posx>
+					<posy>285</posy>
+					<width>640</width>
+					<height>150</height>
+					<onleft>9001</onleft>
+					<onright>9001</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>300</scrolltime>
+					<focusposition>1</focusposition>
+					<movement>1</movement>
+					<itemlayout height="50" width="640">
+						<control type="label">
+							<posx>320</posx>
+							<posy>0</posy>
+							<width>640</width>
+							<height>50</height>
+							<font>font30_title</font>
+							<textcolor>FF505050</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="50" width="640">
+						<control type="image">
+							<posx>160</posx>
+							<posy>0</posy>
+							<width>320</width>
+							<height>4</height>
+							<texture>dh-separator.png</texture>
+						</control>
+						<control type="label">
+							<posx>320</posx>
+							<posy>0</posy>
+							<width>640</width>
+							<height>50</height>
+							<font>font30_title</font>
+							<textcolor>FFEB9E17</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+							<animation effect="zoom" center="320,25" start="130" end="100" time="200" reversible="false" condition="!Control.HasFocus(9000)">conditional</animation>
+							<visible>!Control.HasFocus(9000)</visible>
+						</control>
+						<control type="label">
+							<posx>320</posx>
+							<posy>0</posy>
+							<width>640</width>
+							<height>50</height>
+							<font>font_MainMenu</font>
+							<textcolor>FFEB9E17</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+							<animation effect="zoom" center="320,25" start="75" end="100" time="200" reversible="false">focus</animation>
+							<animation effect="zoom" center="320,25" start="100" end="75" time="200" reversible="false">unfocus</animation>
+							<visible>Control.HasFocus(9000)</visible>
+						</control>
+						<control type="image">
+							<posx>160</posx>
+							<posy>50</posy>
+							<width>320</width>
+							<height>4</height>
+							<texture>dh-separator.png</texture>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+
+			<control type="group">
+				<description>Menu Information</description>
+				<visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+				<animation effect="slide" start="0,720" end="0,0" time="1000">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,720" time="1000">Hidden</animation>
+				<posx>190</posx>
+				<posy>50</posy>
+				<control type="image">
+					<description>Dialog background image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>500</height>
+					<texture border="40">dh-DialogBack2.png</texture>
+				</control>
+				<control type="image">
+					<description>Dialog Header image</description>
+					<posx>40</posx>
+					<posy>16</posy>
+					<width>820</width>
+					<height>40</height>
+					<texture>dh-dialogheader.png</texture>
+				</control>
+				<control type="button">
+					<description>left Arrow</description>
+					<posx>-40</posx>
+					<posy>60</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>dh-arrow-big-left.png</texturefocus>
+					<texturenofocus>dh-arrow-big-left.png</texturenofocus>
+					<onclick>Control.Move(9001,-1)</onclick>
+					<visible>Container(9001).HasPrevious</visible>
+					<animation effect="fade" time="300">Visible</animation>
+					<animation effect="fade" time="300">Hidden</animation>
+				</control>
+				<control type="button">
+					<description>right Arrow</description>
+					<posx>910</posx>
+					<posy>60</posy>
+					<width>30</width>
+					<height>40</height>
+					<texturefocus>dh-arrow-big-right.png</texturefocus>
+					<texturenofocus>dh-arrow-big-right.png</texturenofocus>
+					<onclick>Control.Move(9001,1)</onclick>
+					<visible>Container(9001).HasNext</visible>
+					<animation effect="fade" time="300">Visible</animation>
+					<animation effect="fade" time="300">Hidden</animation>
+				</control>
+				<control type="grouplist" id="9001">
+					<posx>12</posx>
+					<posy>20</posy>
+					<width>876</width>
+					<height>460</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<itemgap>0</itemgap>
+					<scrolltime>1000</scrolltime>
+					<orientation>horizontal</orientation>
+					<control type="group" id="500">
+						<description>Game Modes Information</description>
+						<width>876</width>
+						<height>460</height>
+						<defaultcontrol always="true">501</defaultcontrol>
+						<control type="button" id="501">
+							<description>dummy button</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>876</width>
+							<height>460</height>
+							<label>-</label>
+							<font>-</font>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onleft>600</onleft>
+							<onright>400</onright>
+						</control>
+						<control type="label">
+							<description>header label</description>
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>820</width>
+							<height>30</height>
+							<font>font13_title</font>
+							<label>Game Modes</label>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>FFEB9E17</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="textbox">
+							<description>Description</description>
+							<posx>28</posx>
+							<posy>35</posy>
+							<width>820</width>
+							<height>65</height>
+							<font>font12</font>
+							<align>center</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>There are three modes to choose from in Duck Hunt: Game A, Game B, and Game C. The objective of all these games is to shoot the various targets before the time runs out or you run out of bullets.</label>
+							<pagecontrol>-</pagecontrol>
+						</control>
+						<control type="textbox">
+							<description>Game Description</description>
+							<posx>28</posx>
+							<posy>100</posy>
+							<width>820</width>
+							<height>360</height>
+							<font>font12</font>
+							<align>justify</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>[B]Game A[/B]
+
+In game A your dog scares up one duck for you to shoot. You are provided three bullets to shoot the duck and there is a limited amount of time before the duck flies away. There are 10 sessions of one duck per level and you must shoot a certain amount of ducks to advance to the next level. If you shoot all ten ducks in a level you get a "perfect bonus". As you advance through each level the ducks fly progressively faster and are therefore harder to shoot. Once you get to level 99, you will enter level 0, a kill-stage where the duck rapidly and erratically fly to the edges or leave the screen instantly. This mode should be picked for beginners. The NES controller can also be used to control the duck's flight.
+
+[B]Game B[/B]
+
+Game B is pretty much the same game as game A except this time two ducks are scared out of the grass and you must shoot them both. This version is more difficult since you still only have three bullets and the time limit is the same. There are only 5 two duck sessions per level, making play slightly faster.
+
+As with Game A, you can reach round 99 if you are skilled enough. If you complete it, you will enter round 0, where the ducks will move slowly rather than causing an instant gameover. Completing this round returns you to the first round.
+
+[B]Game C[/B]
+
+The ducks are absent form this mode, being replaced by clay disks or "pigeons". Again, you are given three bullets with which you must shoot two disks that are launched from the bottom of your screen. As these disks progress through the air they get farther and farther away and much harder to shoot. If you can, it is easiest to shoot them as soon as they are launched. This mode is described as "the ultimate challenge" in the instruction booklet.
+
+As with Game A, you can reach round 99 with enough patience. If you complete it, you will enter round 0. While the clays are launched at a slow speed, they will disappear half-way up the screen and require a quick reaction to hit.
+
+[B]Game X[/B]
+
+Game X is pretty much the same game as game B except this time three ducks are scared out of the grass and you must shoot all three.  This version is more difficult since you still only have three bullets and the time limit is the same. There are only 4 three duck sessions per level, making play slightly faster.[CR][CR]&#32;</label>
+							<pagecontrol>-</pagecontrol>
+							<autoscroll time="2000" delay="4000" repeat="3000">Control.HasFocus(501)</autoscroll>
+						</control>
+					</control>
+					<control type="group" id="400">
+						<description>Point System Information</description>
+						<width>876</width>
+						<height>460</height>
+						<defaultcontrol always="true">401</defaultcontrol>
+						<control type="button" id="401">
+							<description>dummy button</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>876</width>
+							<height>460</height>
+							<label>-</label>
+							<font>-</font>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onleft>500</onleft>
+							<onright>600</onright>
+							<onup>250</onup>
+							<ondown>250</ondown>
+						</control>
+						<control type="label">
+							<description>header label</description>
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>820</width>
+							<height>30</height>
+							<font>font13_title</font>
+							<label>Point System</label>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>FFEB9E17</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="textbox">
+							<description>Description</description>
+							<posx>28</posx>
+							<posy>35</posy>
+							<width>820</width>
+							<height>65</height>
+							<font>font12</font>
+							<align>center</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>Points are awarded for hitting individual ducks or disks, as shown in the table below. An additional bonus is awarded for hitting all 10 targets in a round. If you max out your score, it will wrap to 0 points.[CR]An perfect bonus +10000 is allowed, if you shooting all targets in 10 hits.</label>
+							<pagecontrol>-</pagecontrol>
+						</control>
+						<control type="panel" id="250">
+							<description>Point System Container</description>
+							<posx>0</posx>
+							<posy>100</posy>
+							<width>876</width>
+							<height>360</height>
+							<onleft>500</onleft>
+							<onright>600</onright>
+							<onup>250</onup>
+							<ondown>250</ondown>
+							<itemlayout height="60" width="146">
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>146</width>
+									<height>60</height>
+									<texture border="5">dh-button-nofocus.png</texture>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>5</posy>
+									<width>146</width>
+									<height>50</height>
+									<aspectratio>keep</aspectratio>
+									<texture>$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="label">
+									<posx>73</posx>
+									<posy>0</posy>
+									<width>146</width>
+									<height>60</height>
+									<label>[B]$INFO[ListItem.Label][/B]</label>
+									<font>font12</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<textcolor>white</textcolor>
+									<shadowcolor>black</shadowcolor>
+								</control>
+							</itemlayout>
+							<focusedlayout height="60" width="146">
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>146</width>
+									<height>60</height>
+									<visible>!Control.HasFocus(250)</visible>
+									<texture border="5">dh-button-nofocus.png</texture>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>146</width>
+									<height>60</height>
+									<visible>Control.HasFocus(250)</visible>
+									<texture border="5">dh-folder-focus.png</texture>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>5</posy>
+									<width>146</width>
+									<height>50</height>
+									<aspectratio>keep</aspectratio>
+									<texture>$INFO[ListItem.Icon]</texture>
+								</control>
+								<control type="label">
+									<posx>73</posx>
+									<posy>0</posy>
+									<width>146</width>
+									<height>60</height>
+									<label>[B]$INFO[ListItem.Label][/B]</label>
+									<font>font12</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<textcolor>white</textcolor>
+									<shadowcolor>black</shadowcolor>
+								</control>
+							</focusedlayout>
+						</control>
+					</control>
+					<control type="group" id="600">
+						<description>Point System 2 Information</description>
+						<width>876</width>
+						<height>460</height>
+						<defaultcontrol always="true">601</defaultcontrol>
+						<control type="button" id="601">
+							<description>dummy button</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>876</width>
+							<height>460</height>
+							<label>-</label>
+							<font>-</font>
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onleft>400</onleft>
+							<onright>500</onright>
+						</control>
+						<control type="label">
+							<description>header label</description>
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>820</width>
+							<height>30</height>
+							<font>font13_title</font>
+							<label>Point System</label>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>FFEB9E17</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="textbox">
+							<description>Description</description>
+							<posx>28</posx>
+							<posy>35</posy>
+							<width>820</width>
+							<height>65</height>
+							<font>font12</font>
+							<align>center</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>In addition, you need to shoot a minimum number of ducks or discs on each round. The amount will start to increase on round 11, and will not decrease if you managed to wrap the round counter back to 0.</label>
+							<pagecontrol>-</pagecontrol>
+						</control>
+						<control type="textbox">
+							<description>Description</description>
+							<posx>28</posx>
+							<posy>100</posy>
+							<width>410</width>
+							<height>360</height>
+							<font>font13</font>
+							<align>center</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>[CR][B]Rounds[/B][CR][CR]1 through 10[CR]11 through 12[CR]13 through 14[CR]15 through 19[CR]20 through 99[CR]0 and beyond</label>
+							<pagecontrol>-</pagecontrol>
+						</control>
+						<control type="textbox">
+							<description>Point System 2 Description</description>
+							<posx>438</posx>
+							<posy>100</posy>
+							<width>410</width>
+							<height>360</height>
+							<font>font13</font>
+							<align>center</align>
+							<textcolor>white</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<label>[CR][B]Ducks/Discs required to advance[/B][CR][CR]6 out of 10[CR]7 out of 10[CR]8 out of 10[CR]9 out of 10[CR]10 out of 10[CR]10 out of 10, Game mode B/C only</label>
+							<pagecontrol>-</pagecontrol>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<control type="group">
+			<description>hi score infos</description>
+			<visible>!System.IdleTime(10) + !IsEmpty(Container(9000).ListItem.Label2) + !IntegerGreaterThan(Container(250).NumItems,0)</visible>
+			<animation effect="slide" start="0,300" end="0,0" time="600">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,300" time="600">Hidden</animation>
+			<posx>435</posx>
+			<posy>390</posy>
+			<control type="image">
+				<description>Dialog background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>410</width>
+				<height>195</height>
+				<texture border="10">dh-DialogBack2.png</texture>
+			</control>
+			<control type="label">
+				<posx>20</posx>
+				<posy>20</posy>
+				<width>128</width>
+				<height>25</height>
+				<font>font13_title</font>
+				<textcolor>FF0084ff</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(9000).ListItem.Property(name)]</label>
+			</control>
+			<control type="image">
+				<posx>20</posx>
+				<posy>45</posy>
+				<width>128</width>
+				<height>128</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="dh-DefaultActor.png">$INFO[Container(9000).ListItem.Icon]</texture>
+				<bordertexture border="8">dh-ThumbShadow.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="label">
+				<description>score label</description>
+				<posx>135</posx>
+				<posy>20</posy>
+				<width>260</width>
+				<height>25</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13_title</font>
+				<textcolor>FFEB9E17</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>TOP SCORE</label>
+			</control>
+			<control type="group">
+				<posx>260</posx>
+				<posy>55</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>FF0084ff</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>Score:</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>20</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>FF0084ff</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>Level:</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>40</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>FF0084ff</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>Perfect:</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>60</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>FF0084ff</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>Time Played:</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>80</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>FF0084ff</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>Date:</label>
+				</control>
+			</control>
+			<control type="group">
+				<posx>270</posx>
+				<posy>55</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9000).ListItem.Property(score)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>20</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9000).ListItem.Property(level)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>40</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9000).ListItem.Property(perfect)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>60</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9000).ListItem.Property(timeplayed)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>80</posy>
+					<width max="125">auto</width>
+					<height>20</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Container(9000).ListItem.Property(date)]</label>
+				</control>
+			</control>
+		</control>
+		<control type="image">
+			<description>background overlay 2 image</description>
+			<posx>0</posx>
+			<posy>402r</posy>
+			<width>1280</width>
+			<height>402</height>
+			<texture>ground.png</texture>
+		</control>
+		<control type="fixedlist" id="150">
+			<description>Cartridge Container (30 max)</description>
+			<posx>600</posx>
+			<posy>70r</posy>
+			<width>660</width>
+			<height>50</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<scrolltime>200</scrolltime>
+			<focusposition>30</focusposition>
+			<orientation>horizontal</orientation>
+			<hitrect x="1" y="1" w="0" h="0" />
+			<itemlayout height="50" width="22">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>22</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>balle.png</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="22">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>22</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>balle.png</texture>
+				</control>
+				<control type="label">
+					<posx>11</posx>
+					<posy>10</posy>
+					<width>22</width>
+					<height>40</height>
+					<label>[B]$INFO[ListItem.Label2][/B]</label>
+					<font>font12</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>black</textcolor>
+					<shadowcolor>FFEB9E17</shadowcolor>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<visible>Player.HasMedia</visible>
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<control type="button">
+				<description>push button</description>
+				<posx>30</posx>
+				<posy>55r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(PlayerControls)</onclick>
+				<texturefocus border="5">dh-floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">dh-floor_button.png</texturenofocus>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+			</control>
+			<control type="image">
+				<description>Player Icon</description>
+				<posx>35</posx>
+				<posy>50r</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>dh-icon_player.png</texture>
+			</control>
+			<control type="label">
+				<posx>85</posx>
+				<posy>53r</posy>
+				<width>700</width>
+				<height>20</height>
+				<label>$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title] - ([COLOR=FF0084ff]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<posx>85</posx>
+				<posy>32r</posy>
+				<width>700</width>
+				<height>20</height>
+				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, - ]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>Player.HasAudio</visible>
+			</control>
+			<control type="label">
+				<posx>85</posx>
+				<posy>30r</posy>
+				<width>700</width>
+				<height>20</height>
+				<label>$INFO[VideoPlayer.Studio]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
+			</control>
+			<control type="label">
+				<posx>85</posx>
+				<posy>30r</posy>
+				<width>700</width>
+				<height>20</height>
+				<label>$INFO[VideoPlayer.TVShowTitle]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>85</posx>
+				<posy>30r</posy>
+				<width>700</width>
+				<height>20</height>
+				<label>$INFO[VideoPlayer.Artist]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>grey</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>Player.HasVideo + VideoPlayer.Content(MusicVideos)</visible>
+			</control>
+		</control>
+		<control type="multiimage">
+			<description>dog walking image</description>
+			<posx>-120</posx>
+			<posy>520</posy>
+			<width>120</width>
+			<height>120</height>
+			<imagepath background="true">$INFO[Window.Property(sprites_dir)]dog/walking</imagepath>
+			<timeperimage>100</timeperimage>
+			<fadetime>0</fadetime>
+			<animation effect="slide" start="0,0" end="1400,0" time="60000" loop="true" reversible="false" condition="true">Conditional</animation>
+		</control>
+
+		<control type="group" id="1000">
+			<control type="image">
+				<posx>-11</posx>
+				<posy>550</posy>
+				<width>22</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture>balle.png</texture>
+				<animation type="conditional" condition="!IsEmpty(Container(50).Property(fire))" reversible="false">
+					<effect type="slide" start="0,0" end="0,-600" time="300" tween="quadratic" easing="out" />
+					<effect type="zoom" center="auto" start="100" end="10" time="300" tween="quadratic" easing="in" />
+				</animation>
+			</control>
+			<control type="group">
+				<visible>Window.IsActive(Pointer.xml)</visible>
+				<control type="image">
+					<description>target Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<texture>target.png</texture>
+					<aspectratio>keep</aspectratio>
+					<animation effect="slide" end="-24,-24" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="360" time="20000" loop="true" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>target Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<texture>target.png</texture>
+					<colordiffuse>black</colordiffuse>
+					<visible>!IntegerGreaterThan(Container(50).Property(score),59999)</visible>
+					<animation effect="fade" time="300">Visible</animation>
+					<animation effect="fade" time="300">Hidden</animation>
+					<animation effect="slide" end="-25,-25" condition="true">Conditional</animation>
+					<animation effect="rotate" center="auto" start="0" end="-360" time="20000" loop="true" condition="true">Conditional</animation>
+					<animation type="conditional" condition="true" loop="true">
+						<effect type="zoom" center="auto" start="100" end="125" time="2000" />
+						<effect type="zoom" center="auto" start="100" end="75" time="2000" delay="2000" />
+					</animation>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

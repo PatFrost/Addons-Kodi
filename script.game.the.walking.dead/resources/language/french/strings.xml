@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>>
+  <!-- strings 32000 thru 32999 reserved for scripts -->
+  <string id="32000">The Walking Dead</string>
+
+  <string id="32100">Menu de gauche</string>
+  <string id="32101">Aide Walking</string>
+  <string id="32102">Cet onglet signale un menu en côté de fenêtre contenant des options supplémentaires pour ce jeu.  Pour accéder/quitter ce menu, appuyez sur le bouton "[B]Title[/B]" sur votre télécommande ou votre clavier (lettre [B]C[/B]) soit l'action "[B]Menu Contextuel[/B]" par défaut d'XBMC ou placez votre souris au dessus de l'onglet. [CR][CR]Cliquez sur "[B]Ok[/B]" pour fermer cette fenêtre. Elle n’apparaîtra plus.</string>
+  
+  <string id="32110">Menu de droite</string>
+  <string id="32111">Aide Jeu</string>
+  <string id="32112">Cet onglet signale un menu en côté de fenêtre contenant des options pour la partie en cours...  Ce menu permet de changer d'arme et de personnage, s'il est vivant (statut: [COLOR=FF339933]vivant[/COLOR] / [COLOR=FFA52A2A]mort[/COLOR] / [COLOR=FF666666]mort-vivant[/COLOR] / [COLOR=FF336699]inconnu[/COLOR]).  Pour accéder/quitter ce menu, appuyez sur le bouton "[B]Info[/B]" sur votre télécommande ou votre clavier (lettre [B]I[/B]) soit l'action "[B]Info[/B]" par défaut d'XBMC ou placez votre souris au dessus de l'onglet. [CR][CR]Cliquez sur "[B]Ok[/B]" pour fermer cette fenêtre. Elle n’apparaîtra plus.</string>
+  
+  <string id="32120">Menu Armes</string>
+  <string id="32121">Aide Armes</string>
+  <string id="32122">Le menu de l'arme pour la partie en cours. Pour accéder/quitter ce menu, appuyez sur le bouton "[B]Zero/Star[/B]" sur votre télécommande ou votre clavier (lettre [B]Q[/B]) soit l'action "[B]Queue Item[/B]" par défaut d'XBMC ou placez votre souris au dessus de l'arme.[CR]Pour faire feu cliquez sur l'arme et pour la direction de l'arme et dans le jeu, utilisez les touches avec les flèches (up, down, left, right)[CR][CR]Cliquez sur "[B]Ok[/B]" pour fermer cette fenêtre. Elle n’apparaîtra plus.</string>
+</strings>

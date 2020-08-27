@@ -1,0 +1,144 @@
+
+<control type="panel">
+    <left>334</left>
+    <top>450</top>
+    <width>480</width>
+    <height>160</height>
+    <pagecontrol>-</pagecontrol>
+    <scrolltime>300</scrolltime>
+    <itemlayout height="80" width="80">
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <texture>white.png</texture>
+            <bordersize>3</bordersize>
+            <colordiffuse>green</colordiffuse>
+            <visible>String.IsEqual(ListItem.Label,color)</visible>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <texture border="5">diamond-button-nofocus.png</texture>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <bordersize>5</bordersize>
+            <texture>$INFO[ListItem.Icon,gems/,.png]</texture>
+            <texture>$INFO[ListItem.Icon,gems/,.png]</texture>
+            <animation type="conditional" condition="String.IsEqual(ListItem.Label2,slideup)" loop="true">
+                <effect type="slide" start="0,0" end="0,-80" time="1000" delay="2000" />
+                <effect type="slide" start="0,0" end="0,80" time="1000" delay="6000" />
+            </animation>
+            <animation type="conditional" condition="String.IsEqual(ListItem.Label2,slidedown)" loop="true">
+                <effect type="slide" start="0,0" end="0,80" time="1000" delay="2000" />
+                <effect type="slide" start="0,0" end="0,-80" time="1000" delay="6000" />
+            </animation>
+        </control>
+    </itemlayout>
+    <focusedlayout height="80" width="80">
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <texture>white.png</texture>
+            <bordersize>3</bordersize>
+            <colordiffuse>green</colordiffuse>
+            <visible>String.IsEqual(ListItem.Label,color)</visible>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <texture border="5">diamond-button-nofocus.png</texture>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>80</width>
+            <height>80</height>
+            <bordersize>5</bordersize>
+            <texture>$INFO[ListItem.Icon,gems/,.png]</texture>
+            <animation type="conditional" condition="String.IsEqual(ListItem.Label2,slideup)" loop="true">
+                <effect type="slide" start="0,0" end="0,-80" time="1000" delay="2000" />
+                <effect type="slide" start="0,0" end="0,80" time="1000" delay="6000" />
+            </animation>
+            <animation type="conditional" condition="String.IsEqual(ListItem.Label2,slidedown)" loop="true">
+                <effect type="slide" start="0,0" end="0,80" time="1000" delay="2000" />
+                <effect type="slide" start="0,0" end="0,-80" time="1000" delay="6000" />
+            </animation>
+        </control>
+    </focusedlayout>
+    <content>
+        <item>
+            <label>color</label>
+            <label2>slidedown</label2>
+            <onclick>-</onclick>
+            <icon>gem1b</icon>
+        </item>
+        <item>
+            <label>color</label>
+            <onclick>-</onclick>
+            <icon>gem7b</icon>
+        </item>
+        <item>
+            <label>color</label>
+            <onclick>-</onclick>
+            <icon>gem7b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>dynamite6</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem5b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem4b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <label2>slideup</label2>
+            <onclick>-</onclick>
+            <icon>gem7b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem6b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem5b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem4b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem3b</icon>
+        </item>
+        <item>
+            <label>-</label>
+            <onclick>-</onclick>
+            <icon>gem2b</icon>
+        </item>
+    </content>
+</control>

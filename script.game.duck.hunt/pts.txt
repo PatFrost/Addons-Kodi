@@ -1,0 +1,23 @@
+Point System
+
+Points are awarded for hitting individual ducks or disks, as shown in the table below.
+An additional bonus is awarded for hitting all 10 targets in a round.
+If you max out your score, it will wrap to 0 points.
+
+Duck 			Rounds 1-5 		Rounds 6-10 		Rounds 11-15 		Rounds 16-20 		Rounds 21-99
+Black (A/B) 	500 			800 				1000 				1000 				1000
+Blue  (A/B) 	1000 			1500 				2000 				2000 				2000
+Red   (A/B) 	1500 			2400 				3000 				3000 				3000
+Discs (C) 		1000 			1500 				2000 				2000 				2000
+Bonus (A/B/C) 	10000 			10000 				15000 				20000 				30000
+
+In addition, you need to shoot a minimum number of ducks or discs on each round.
+The amount will start to increase on round 11, and will not decrease if you managed to wrap the round counter back to 0.
+
+Rounds 			Ducks/Discs required to advance
+1  through 10 	6 out of 10
+11 through 12 	7 out of 10
+13 through 14 	8 out of 10
+15 through 19 	9 out of 10
+20 through 99 	10 out of 10
+0 and beyond 	10 out of 10, Game mode B/C only
